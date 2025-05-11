@@ -1,0 +1,1128 @@
+sentence1,sentence2,label
+Tôi rất thích ăn phở.,Phở là món ăn yêu thích của tôi.,0.9
+Hôm nay trời đẹp quá.,Thời tiết hôm nay thật tuyệt.,0.8
+Tôi đang học lập trình Python.,Tôi đang viết code bằng Python.,0.7
+Hà Nội là thủ đô của Việt Nam.,TP Hồ Chí Minh là thành phố lớn nhất Việt Nam.,0.3
+Chúng tôi đang đi du lịch ở biển.,Tôi đang đọc một cuốn sách hay.,0.1
+Con mèo đang ngủ trên ghế.,Chú mèo đang nằm trên chiếc ghế.,0.9
+Cửa hàng mở cửa vào lúc 8 giờ sáng.,Cửa hàng đóng cửa lúc 10 giờ tối.,0.4
+Tôi thích nghe nhạc khi làm việc.,Tôi thường nghe nhạc trong lúc làm việc.,0.95
+Bạn có thể giúp tôi một chút được không?,Làm ơn giúp tôi việc này.,0.7
+Hôm nay tôi phải đi làm sớm.,Tôi không đi làm hôm nay.,0.2
+Tôi đã nấu một bữa tối ngon.,Bữa tối hôm nay do tôi nấu rất ngon.,0.9
+Chuyến bay của chúng tôi bị hoãn.,Máy bay chúng tôi đặt đã bị trì hoãn.,0.85
+Trời đang mưa rất to.,Cơn mưa đang rất lớn.,0.95
+Tôi không thích ăn đồ cay.,Tôi thích món ăn cay.,0.2
+Hệ điều hành này rất dễ sử dụng.,Phần mềm này có giao diện thân thiện.,0.6
+Cô ấy đang học tiếng Anh.,Anh ấy đang học tiếng Pháp.,0.5
+Tôi thích đi bơi vào cuối tuần.,Cuối tuần tôi thường đến hồ bơi.,0.9
+Giá xăng đã tăng trong tháng này.,Giá dầu đã giảm so với tháng trước.,0.3
+Buổi họp sẽ bắt đầu lúc 2 giờ chiều.,Cuộc họp được lên lịch vào 14 giờ.,0.95
+Món phở này rất đậm đà.,Tôi thích ăn bún bò Huế.,0.4
+Chúng tôi sẽ đi Đà Lạt vào tuần sau.,Tuần tới chúng tôi có kế hoạch đến Đà Lạt.,0.9
+Bạn cần phải đăng ký tài khoản trước.,Việc đăng ký tài khoản là bắt buộc.,0.8
+Thị trường chứng khoán đang tăng mạnh.,Giá vàng hôm nay giảm nhẹ.,0.1
+Cô ấy đã hoàn thành bài tập về nhà.,Cô ấy chưa làm xong bài tập.,0.1
+Bộ phim này rất hấp dẫn.,Tôi thấy bộ phim này rất thú vị.,0.85
+Trường đại học sẽ đóng cửa vào ngày lễ.,Các trường học sẽ nghỉ vào ngày lễ.,0.75
+Tôi cần mua một chiếc máy tính mới.,Tôi đang tìm mua laptop mới.,0.8
+Cafe này có không gian rất đẹp.,Nhà hàng này có view nhìn ra biển.,0.3
+Xe buýt số 8 đi qua bệnh viện.,Xe buýt số 8 dừng ở trạm gần bệnh viện.,0.7
+Tôi đã đọc cuốn sách này rồi.,Tôi chưa bao giờ đọc cuốn sách đó.,0.0
+Chiếc điện thoại này có camera rất tốt.,Máy ảnh trên điện thoại này chụp rất đẹp.,0.9
+Tôi làm việc từ thứ Hai đến thứ Sáu.,Tôi nghỉ làm vào cuối tuần.,0.6
+Nhà hàng này phục vụ các món ăn Nhật Bản.,Đây là một nhà hàng chuyên đồ ăn Hàn Quốc.,0.4
+Hôm nay tôi cảm thấy không khỏe.,Tôi đang bị ốm và cần nghỉ ngơi.,0.8
+Xe đạp của tôi bị hỏng phanh.,Tôi cần mua một chiếc xe máy mới.,0.3
+Cô ấy thích uống trà vào buổi sáng.,Mỗi sáng cô ấy đều pha một tách trà.,0.9
+Chúng tôi sẽ tổ chức tiệc sinh nhật vào tối nay.,Bữa tiệc sinh nhật được tổ chức vào tối nay.,0.95
+Việt Nam là một quốc gia ở Đông Nam Á.,Brazil nằm ở châu Mỹ Latinh.,0.1
+Tôi đã hoàn thành dự án đúng thời hạn.,Dự án đã được tôi hoàn thành đúng hạn.,1.0
+Cửa sổ trong phòng này cần được lau sạch.,Sàn nhà cần được quét dọn sạch sẽ.,0.4
+Anh ấy đang chơi đàn guitar.,Anh ấy đang biểu diễn một bản nhạc bằng guitar.,0.8
+Tôi thường đi bộ đến công viên mỗi sáng.,Tôi chạy bộ ở công viên vào mỗi buổi sáng.,0.7
+Cô giáo đang giảng bài trên lớp.,Học sinh đang làm bài tập ở nhà.,0.3
+Bạn cần đợi xe buýt ở trạm kế tiếp.,Trạm xe buýt tiếp theo là nơi bạn nên đợi.,0.9
+Ngân hàng mở cửa vào lúc 8 giờ sáng.,Ngân hàng bắt đầu phục vụ khách từ 8 giờ.,0.95
+Tôi thích ngắm hoàng hôn trên bãi biển.,Bầu trời buổi chiều tà rất đẹp khi nhìn từ bờ biển.,0.8
+Cà phê đen không đường là thức uống yêu thích của tôi.,Tôi rất thích uống trà xanh mỗi ngày.,0.3
+Bộ phim hành động này rất gay cấn.,Bộ phim này có nhiều cảnh hành động hồi hộp.,0.85
+Tôi đã đặt vé máy bay đi Hà Nội.,Tôi sẽ bay đến thủ đô vào tuần tới.,0.7
+Thời tiết hôm nay khá lạnh.,Nhiệt độ ngoài trời hôm nay khá thấp.,0.9
+Công ty chúng tôi đang tuyển kỹ sư phần mềm.,Vị trí kỹ sư phần mềm đang được công ty tuyển dụng.,1.0
+Chúng tôi sẽ đi picnic nếu trời không mưa.,"Nếu trời đẹp, chúng tôi sẽ tổ chức dã ngoại.",0.8
+Tôi quên mang ví khi đi mua sắm.,Tôi không thể thanh toán vì quên ví ở nhà.,0.7
+Cửa hàng này bán rất nhiều loại trái cây.,Siêu thị gần nhà có bán rau củ tươi.,0.5
+Anh ấy là một bác sĩ giỏi và tận tâm.,Anh ấy là một kỹ sư xây dựng có kinh nghiệm.,0.1
+Đèn giao thông đang chuyển sang màu đỏ.,Đèn tín hiệu vừa chuyển thành màu đỏ.,0.95
+Tôi không thích những ngày mưa gió.,Tôi thích thời tiết nắng ráo hơn là mưa gió.,0.7
+Bạn cần đeo khẩu trang khi ra ngoài.,Khẩu trang là vật dụng cần thiết khi ra đường.,0.85
+Tôi thường nấu ăn vào cuối tuần.,Tôi dành thời gian để đọc sách vào cuối tuần.,0.3
+Cầu thủ đó đã ghi bàn thắng quyết định.,Bàn thắng quyết định được ghi bởi cầu thủ đó.,1.0
+Cô ấy đang tập yoga mỗi buổi sáng.,Mỗi sáng cô ấy dành thời gian cho việc tập yoga.,0.95
+Tôi cần mua thêm sữa và trứng.,Tôi phải đi siêu thị để mua sữa và trứng.,0.8
+Chìa khóa xe của tôi bị mất.,Tôi không tìm thấy chìa khóa xe đâu cả.,0.9
+Anh ấy đang chạy bộ trong công viên.,Anh ấy đang bơi ở hồ bơi công cộng.,0.2
+Bữa tối hôm nay có món gà nướng.,Chúng tôi sẽ ăn gà nướng vào bữa tối.,0.9
+Cô ấy đang học tiếng Nhật.,Cô ấy đang tham gia khóa học tiếng Nhật.,0.9
+Tôi thường đọc tin tức mỗi sáng.,Buổi sáng tôi thường uống cà phê.,0.3
+Máy tính của tôi đang chạy rất chậm.,Laptop của tôi gặp vấn đề về tốc độ xử lý.,0.8
+Thủ đô Hà Nội có nhiều di tích lịch sử.,Hà Nội là nơi có nhiều địa điểm lịch sử nổi tiếng.,0.9
+Tôi không thể tham dự cuộc họp ngày mai.,Tôi sẽ vắng mặt trong buổi họp ngày mai.,0.95
+Trận đấu bóng đá sẽ diễn ra vào tối nay.,Buổi hòa nhạc sẽ bắt đầu lúc 8 giờ tối.,0.2
+Món canh chua này rất ngon.,Tôi thích hương vị chua ngọt của món canh này.,0.8
+Em bé đang ngủ trong phòng.,Đứa trẻ đang ngủ say trong phòng ngủ.,0.9
+Tôi đã hoàn thành khóa học lập trình web.,Tôi vừa kết thúc khóa học về phát triển web.,0.9
+Chiếc xe đạp của tôi bị mất.,Ai đó đã lấy cắp xe đạp của tôi.,0.85
+Mùa hè ở Việt Nam rất nóng.,Nhiệt độ mùa hè ở Việt Nam thường rất cao.,0.9
+Tôi thích món bánh mì Việt Nam.,Bánh mì là một trong những món ăn Việt Nam tôi yêu thích.,0.9
+Anh ấy đang học để thi lấy bằng lái xe.,Anh ấy chuẩn bị tham gia kỳ thi lấy giấy phép lái xe.,0.95
+Chúng tôi sẽ gặp nhau tại quán cà phê.,Điểm hẹn của chúng tôi là ở quán cà phê.,1.0
+Chiếc đồng hồ này chạy không chính xác.,Đồng hồ này không hiển thị thời gian đúng.,0.9
+Tôi thích nghe nhạc jazz.,Thể loại nhạc yêu thích của tôi là nhạc cổ điển.,0.4
+Cửa hàng đồ điện tử này có nhiều mặt hàng giảm giá.,Có nhiều sản phẩm điện tử đang được giảm giá tại cửa hàng này.,0.95
+Công viên gần nhà tôi rất đẹp.,Tôi sống gần một công viên rất đẹp.,0.8
+Tôi đang tìm một công việc bán thời gian.,Tôi muốn làm việc part-time.,0.95
+Làm ơn giúp tôi mang những túi đồ này.,Bạn có thể giúp tôi xách những túi này không?,0.85
+Bạn nên uống nhiều nước mỗi ngày.,Uống đủ nước rất quan trọng cho sức khỏe.,0.7
+Tôi cần một chiếc ô vì trời đang mưa.,Tôi phải mang theo ô vì dự báo sẽ có mưa.,0.8
+Món súp này quá mặn.,Có quá nhiều muối trong món súp này.,0.9
+Tôi thường đi bộ đến trạm xe buýt.,Tôi luôn đi bộ đến trường học.,0.5
+Anh ấy đang nói chuyện điện thoại.,Anh ấy đang trò chuyện với ai đó qua điện thoại.,0.95
+Tôi không hiểu ý nghĩa của câu này.,Tôi không nắm được ý nghĩa của câu nói này.,1.0
+Cô ấy có một chiếc váy màu đỏ rất đẹp.,Cô ấy đang mặc một chiếc áo khoác màu xanh.,0.2
+Tôi sẽ về nhà vào lúc 6 giờ chiều.,Tôi dự định có mặt ở nhà lúc 6 giờ tối.,1.0
+Tôi đã trả tiền hóa đơn điện tháng này.,Hóa đơn điện tháng này đã được tôi thanh toán.,1.0
+Chúng ta nên đặt bàn trước khi đến nhà hàng.,Việc đặt bàn trước khi đến nhà hàng là cần thiết.,0.9
+Tôi thường ăn sáng lúc 7 giờ.,Bữa sáng của tôi thường vào lúc 7 giờ.,1.0
+Anh ấy không thích ăn hải sản.,Anh ấy thích ăn thịt bò hơn hải sản.,0.6
+Tôi cần phải sửa máy giặt.,Máy giặt của tôi đang bị hỏng.,0.8
+Bạn có thể mở cửa sổ được không?,Làm ơn mở cửa sổ giúp tôi.,0.9
+Tôi muốn học thêm một ngoại ngữ mới.,Tôi đang có ý định học một ngôn ngữ khác.,0.9
+Bạn đã xem bộ phim mới ra rạp chưa?,Bạn đã thưởng thức bộ phim mới công chiếu chưa?,0.95
+Trời đang có tuyết rơi.,Tuyết đang rơi bên ngoài.,1.0
+Tôi cần mua một đôi giày mới.,Tôi muốn thay thế đôi giày cũ của mình.,0.8
+Chúng tôi sẽ tham quan bảo tàng vào ngày mai.,Ngày mai chúng tôi dự định đi bảo tàng.,0.95
+Tôi không thích món cà ri này.,Món cà ri này không hợp khẩu vị của tôi.,0.9
+Cô ấy rất giỏi nấu ăn.,Cô ấy nấu ăn rất ngon.,0.9
+Anh ấy đã làm mất chìa khóa nhà.,Anh ấy không tìm thấy chìa khóa nhà đâu cả.,0.9
+Tôi thích đọc sách vào buổi tối.,Buổi tối là thời gian tôi thường đọc sách.,0.95
+Chúng tôi sẽ đi dạo trong công viên.,Chúng tôi dự định đi bộ quanh công viên.,0.95
+Món phở này có hương vị đặc biệt.,Tô phở này có vị rất khác biệt.,0.9
+Tôi thường xem phim vào cuối tuần.,Cuối tuần tôi thường ra rạp xem phim.,0.8
+Cô ấy đang học để trở thành bác sĩ.,Cô ấy đang theo học ngành y.,0.8
+Tôi đã mua một chiếc xe đạp mới.,Tôi vừa sắm một chiếc xe đạp mới.,1.0
+Anh ấy làm việc tại một công ty phần mềm.,Công việc của anh ấy là ở một công ty phát triển phần mềm.,0.95
+Nhà hàng này phục vụ món ăn rất ngon.,Đồ ăn ở nhà hàng này rất tuyệt vời.,0.9
+Tôi cần thuê một căn hộ gần trung tâm.,Tôi đang tìm kiếm căn hộ cho thuê ở khu vực trung tâm.,0.9
+Bạn có thể giúp tôi chỉ đường đến bến xe không?,Làm ơn hướng dẫn tôi cách đi đến bến xe.,0.95
+Tôi thích nghe nhạc khi tập thể dục.,Tôi thường bật nhạc trong khi tập thể dục.,0.95
+Anh ấy đang học lái xe.,Anh ấy đang tham gia khóa học lái xe.,0.9
+Tôi sẽ gửi email cho bạn vào ngày mai.,Tôi sẽ liên hệ với bạn qua email vào ngày mai.,1.0
+Cô ấy đang nấu bữa tối cho gia đình.,Cô ấy đang chuẩn bị bữa tối cho cả nhà.,1.0
+Tôi thích uống trà xanh hơn trà đen.,Tôi ưa thích trà xanh so với trà đen.,1.0
+Anh ấy sẽ đến muộn vì kẹt xe.,Anh ấy không thể đến đúng giờ do tắc đường.,0.9
+Chúng tôi đang tìm kiếm một căn nhà để mua.,Chúng tôi muốn mua một căn nhà mới.,0.9
+Trời đang mưa nên tôi không thể đi dạo.,Vì trời mưa nên tôi không đi bộ được.,0.95
+Tôi cần phải đi mua sắm cho bữa tối.,Tôi phải ra chợ mua thực phẩm cho bữa tối.,0.9
+Cô ấy thích vẽ tranh trong thời gian rảnh.,Sở thích của cô ấy là vẽ tranh khi có thời gian.,0.95 
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.95
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.05
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.92
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.8
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.75
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.37
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.86
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.86
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.66
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.89
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.96
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.21
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.87
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.36
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.81
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.96
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.85
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.8
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.78
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.03
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.73
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.74
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.99
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.98
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.42
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.67
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.04
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.64
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.89
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.16
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.8
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.24
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.77
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.4
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.86
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.84
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.31
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.97
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.06
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.88
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.95
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.93
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.49
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.72
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.89
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.27
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.91
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.99
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.26
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.67
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.1
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.25
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.9
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.69
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.67
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.67
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.05
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.97
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.7
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.21
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.06
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.87
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.73
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.91
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.67
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.83
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.95
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.66
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.83
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.74
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.82
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.61
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.77
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.87
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.83
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.98
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.67
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.24
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.2
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.94
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.63
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.74
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.91
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.96
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.85
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.99
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.88
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.92
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.84
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.96
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.7
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.63
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.5
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.95
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.98
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.3
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.27
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.26
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.93
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.9
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.74
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.82
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.65
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.87
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.92
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.9
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.88
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.67
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.24
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.85
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.99
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.05
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.87
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.87
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng tôi đều uống trà.,0.81
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.86
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.24
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.67
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.04
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.83
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.03
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.86
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.86
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.77
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.16
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.89
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.92
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.66
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.89
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.37
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.85
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.85
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.06
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.88
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.89
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.21
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.91
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.3
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.87
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.68
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.79
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.88
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.96
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.22
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.75
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.89
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.5
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.27
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.78
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.78
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.93
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.1
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.23
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.72
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.64
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.26
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.98
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.88
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.7
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.93
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.95
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.97
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.86
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.28
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.81
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.72
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.92
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.97
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.99
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.77
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.84
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.96
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.99
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.73
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.87
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.99
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.77
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.86
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.9
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.99
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.99
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.73
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.73
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.72
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.79
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.89
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.78
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.88
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.2
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.38
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.4
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.67
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.94
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.31
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.92
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.66
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.78
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.98
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.26
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.88
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng tôi đều uống trà.,0.81
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.96
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.67
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.87
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.89
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.27
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.98
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.35
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng tôi đều uống trà.,0.82
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.43
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.89
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.77
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.86
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.79
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.96
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.46
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.82
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.77
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.92
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.98
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.66
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.92
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.76
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.06
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.32
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.78
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.94
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.99
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.8
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.64
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.85
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.86
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.71
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.71
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.71
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.87
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.93
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.92
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.96
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.97
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.87
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.81
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.94
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.26
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.91
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.8
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.81
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.63
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.84
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.05
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.48
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.21
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.8
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.45
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.78
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.16
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.86
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.27
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.05
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.75
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.25
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.85
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.95
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.84
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.78
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.97
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.91
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.84
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.8
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.9
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.9
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.71
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.48
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.7
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.64
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.35
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.78
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.2
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.75
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.32
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.37
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.46
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.91
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.95
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.86
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.76
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.81
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.89
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.85
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.04
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.77
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.9
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.4
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.76
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.87
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.92
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.98
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.98
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.7
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.04
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.72
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.86
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.8
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.48
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.83
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.89
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.47
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.02
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.03
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.9
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.79
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.74
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.33
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.75
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.71
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.79
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.8
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.87
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.28
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.93
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.25
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.97
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.85
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.89
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.7
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.73
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.78
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.82
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.68
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.91
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.79
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.84
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.9
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.05
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.16
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.43
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.37
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.88
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.23
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.8
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng tôi đều uống trà.,0.8
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.95
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.73
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.82
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.99
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.34
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.87
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.74
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.89
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.8
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.89
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.62
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.94
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.49
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.84
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.89
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.91
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.77
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.89
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.74
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.2
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.49
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.82
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng tôi đều uống trà.,0.83
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.91
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.86
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.95
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.63
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.9
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.81
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.8
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.95
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.94
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.95
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.88
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.67
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.93
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.73
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.26
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.78
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.88
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.39
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.86
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.83
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.77
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.26
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.88
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.86
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.86
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.96
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.29
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.04
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.73
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.1
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.2
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.66
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.05
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.98
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.28
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.02
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.8
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.33
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.02
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.89
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.87
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.45
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.93
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.79
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.22
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.9
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.84
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.15
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.6
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.21
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.98
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.86
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.95
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.83
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.97
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.76
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.23
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.98
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.74
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.97
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.85
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.82
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.94
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.49
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.86
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.96
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.96
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.95
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.3
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.35
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.45
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.09
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.86
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.98
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.4
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.02
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.82
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.02
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.96
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.8
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.91
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.82
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.24
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.76
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.88
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.81
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.86
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.1
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.99
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.25
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.29
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.92
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.88
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.61
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.16
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.79
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.28
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.79
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.72
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.85
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.64
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.7
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.78
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.95
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.72
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.75
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.84
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.29
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.66
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.03
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.04
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.68
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.81
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.94
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.46
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.66
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.85
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.87
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng tôi đều uống trà.,0.82
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.92
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.68
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.77
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.68
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.23
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.98
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.87
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.91
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.23
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.71
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.99
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.34
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.31
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.43
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.04
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.87
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.76
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.85
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.64
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.73
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.83
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.93
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.97
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.16
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.98
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.8
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.29
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.1
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.94
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.12
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.68
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.71
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.79
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.92
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.91
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.22
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.97
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.8
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.73
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.98
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.23
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.2
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.78
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.11
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.8
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.07
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.78
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.21
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo đang nghỉ ngơi trên ghế.,0.76
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.97
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.08
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.26
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.19
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.71
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.02
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.4
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.74
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.38
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.9
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.28
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",0.88
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.6
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.95
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.91
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ gió.",0.78
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.78
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.81
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.23
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.94
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.27
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,0.97
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,0.99
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.88
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trời hôm nay mưa rất to.,"Hôm nay thời tiết xấu, trời đổ mưa.",1.0
+Tôi chưa từng đến Hà Nội.,Tôi đã đi Hà Nội rất nhiều lần.,0.2
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.18
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.73
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.21
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Tôi đang nấu ăn.,Tôi đang chuẩn bị bữa tối.,0.82
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.7
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.96
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.13
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.17
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.27
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.92
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.66
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.63
+Anh ấy đang chơi bóng đá.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Trẻ con đang chơi đùa ngoài công viên.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.16
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.79
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,0.87
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Tôi thích uống cà phê vào buổi sáng.,Mỗi sáng mình đều uống cà phê.,1.0
+Trẻ con đang chơi đùa ngoài công viên.,Bọn trẻ chơi trò chơi trong nhà.,0.41
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Tôi chưa từng đến Hà Nội.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.01
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.65
+Tôi đang nấu ăn.,Tôi hiện đang chuẩn bị bữa tối.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.0
+Con mèo đang nằm ngủ trên ghế sofa.,Mèo hiện đang nghỉ ngơi trên ghế.,1.0
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.14
+Cô gái ấy rất thông minh.,Cô ấy học rất giỏi.,0.92
+Cậu bé đang học bài.,Hôm nay là một ngày đẹp trời và tôi đang đi dạo.,0.06
+Tôi đi làm bằng xe buýt mỗi ngày.,Tôi thường di chuyển bằng phương tiện công cộng.,0.73

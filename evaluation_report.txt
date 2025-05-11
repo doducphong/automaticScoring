@@ -1,0 +1,64 @@
+
+============================================================
+DOCX SUBMISSION EVALUATION REPORT
+============================================================
+STUDEN'S INFORMATION:
+  Số báo danh thí sinh: 6251071072
+  Họ và tên thí sinh: Đỗ Đức Phong
+  Ngày, tháng, năm sinh: 21/06/2003
+  Nơi sinh: Nam Định
+  Đại điểm thi: Trường UTC2
+  Đề thi thực hành số: 01
+============================================================
+
+OVERALL RESULT: FAIL
+
+------------------------------------------------------------
+FORMATTING EVALUATION
+------------------------------------------------------------
+
+Margins: MATCH
+
+Columns: MATCH
+
+Wordart: MATCH
+
+Drop Caps: MATCH
+
+Symbols: MATCH
+
+Images: MATCH
+
+Tables: MISMATCH
+  - Table 1 Row 1 Cell 2 Text:
+      expected: 6251071072
+      actual: 0123456789
+  - Table 1 Row 2 Cell 2 Text:
+      expected: Đỗ Đức Phong
+      actual: Lò Thị Nung
+
+------------------------------------------------------------
+CONTENT EVALUATION
+------------------------------------------------------------
+
+Content: MISMATCH
+
+Partially Similar Content (1):
+  - Similarity score: 0.98
+    Sample (2): Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    Submission (2): ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    Differences: {'common': 'ở nơi cực Đông Bắc Tổ quốc Trà Cổ nổi tiếng với đường bờ biển dài nhất Việt Nam hơn 17km Biển ở đây được du khách đánh giá là một trong những bãi biển Quảng Ninh đẹp nhất miền Bắc bên bờ là những cồn cát cao từ 3 5m bao bọc bởi dải rừng phi lao xanh bát ngát phía xa sừng sững dãy núi và khu rừng sinh thái ngập mặn tất cả tạo nên một nét thơ và trữ tình cho vùng biển này', 'removed': 'Ằm', 'added': 'ằm Cái này là để cho lỗi mày mà không biết thì lỏ dái'}
+
+Font Size Mismatch (1):
+  - Paragraph with similarity 1.00:
+    Sample: ☺Bên cạnh các hoạt động trên bãi biển, du khách cò...
+    Expected size: 14.0
+    Actual size: 15.0
+
+Line Spacing Mismatch (1):
+  - Paragraph with similarity 1.00:
+    Sample: ☺Bên cạnh các hoạt động trên bãi biển, du khách cò...
+    Expected spacing: 1.5
+    Actual spacing: 1.0
+
+============================================================
