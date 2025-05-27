@@ -10,16 +10,74 @@
       "differences": {}
     },
     "wordart": {
-      "matches": true,
-      "differences": {}
+      "matches": false,
+      "differences": {
+        "wordart_1_segment_1_glow": {
+          "expected": {
+            "type": "none"
+          },
+          "actual": {
+            "radius": "63500",
+            "color_type": "scheme",
+            "color": "accent3",
+            "saturation": "175000",
+            "alpha": "60000"
+          }
+        },
+        "wordart_1_shape_info_effects": {
+          "expected": {
+            "transform": {
+              "type": "none"
+            }
+          },
+          "actual": {
+            "transform": {
+              "type": "textWave1"
+            }
+          }
+        }
+      }
     },
     "drop_caps": {
       "matches": true,
       "differences": {}
     },
     "symbols": {
-      "matches": true,
-      "differences": {}
+      "matches": false,
+      "differences": {
+        "symbol_count": {
+          "expected": 2,
+          "actual": 1
+        },
+        "symbol_details": [
+          {
+            "index": 0,
+            "differences": {
+              "global_offset": {
+                "expected": 540,
+                "actual": 962
+              }
+            }
+          },
+          {
+            "index": 1,
+            "differences": {
+              "expected": {
+                "type": "unicode_symbol",
+                "character": "☺",
+                "unicode": "U+263A",
+                "font_name": "Times New Roman",
+                "font_size": 14.0,
+                "run_index": 0,
+                "char_offset": 0,
+                "global_offset": 910
+              },
+              "actual": null
+            }
+          }
+        ]
+      },
+      "similarity_score": 0.35
     },
     "images": {
       "matches": true,
@@ -28,13 +86,75 @@
     "tables": {
       "matches": false,
       "differences": {
-        "table_1_row_1_cell_2_text": {
-          "expected": "6251071072",
-          "actual": "0123456789"
+        "table_1_row_1_cell_count": {
+          "expected": 3,
+          "actual": 2
         },
-        "table_1_row_2_cell_2_text": {
-          "expected": "Đỗ Đức Phong",
-          "actual": "Lò Thị Nung"
+        "table_1_row_1_cell_1": {
+          "text_color": {
+            "expected": null,
+            "actual": "FFFFFF"
+          },
+          "background_color": {
+            "expected": null,
+            "actual": "5B9BD5"
+          }
+        },
+        "table_1_row_1_cell_2": {
+          "text": {
+            "expected": "6251071072",
+            "actual": "0123456789"
+          },
+          "text_color": {
+            "expected": null,
+            "actual": "FFFFFF"
+          },
+          "background_color": {
+            "expected": null,
+            "actual": "5B9BD5"
+          }
+        },
+        "table_1_row_2_cell_count": {
+          "expected": 3,
+          "actual": 2
+        },
+        "table_1_row_2_cell_2": {
+          "text": {
+            "expected": "Đỗ Đức Phong",
+            "actual": "LÒ THỊ NUNG"
+          },
+          "is_uppercase": {
+            "expected": false,
+            "actual": true
+          }
+        },
+        "table_1_row_3_cell_count": {
+          "expected": 3,
+          "actual": 2
+        },
+        "table_1_row_4_cell_count": {
+          "expected": 3,
+          "actual": 2
+        },
+        "table_1_row_4_cell_1": {
+          "is_bold": {
+            "expected": false,
+            "actual": true
+          }
+        },
+        "table_1_row_4_cell_2": {
+          "is_bold": {
+            "expected": false,
+            "actual": true
+          }
+        },
+        "table_1_row_5_cell_count": {
+          "expected": 3,
+          "actual": 2
+        },
+        "table_1_row_6_cell_count": {
+          "expected": 3,
+          "actual": 2
         }
       }
     }
@@ -58,52 +178,148 @@
           }
         },
         {
-          "type": "font_size_mismatch",
-          "sample_index": 2,
-          "submission_index": 2,
-          "sample_text": "☺Bên cạnh các hoạt động trên bãi biển, du khách còn có thể tới tham quan nhiều địa danh du lịch như: Nhà thờ Trà Cổ, Bãi Đá Đen, Biển Trà Cổ, Mũi Sa Vĩ, Chợ Trung tâm Móng Cái, Chợ cửa khẩu Móng Cái. Đặc biệt, nếu du lịch Trà Cổ vào cuối tháng 5 - đầu tháng 6, bạn đừng quên tham gia lễ hội đình Trà Cổ - hoạt động văn hóa đặc sắc của dân gian vùng đồng bằng sông Hồng. ",
-          "submission_text": "☺Bên cạnh các hoạt động trên bãi biển, du khách còn có thể tới tham quan nhiều địa danh du lịch như: Nhà thờ Trà Cổ, Bãi Đá Đen, Biển Trà Cổ, Mũi Sa Vĩ, Chợ Trung tâm Móng Cái, Chợ cửa khẩu Móng Cái. Đặc biệt, nếu du lịch Trà Cổ vào cuối tháng 5 - đầu tháng 6, bạn đừng quên tham gia lễ hội đình Trà Cổ - hoạt động văn hóa đặc sắc của dân gian vùng đồng bằng sông Hồng. ",
-          "expected": 14.0,
-          "actual": 15.0,
-          "similarity": 1.0
+          "type": "font_name_mismatch",
+          "sample_index": 1,
+          "submission_index": 1,
+          "sample_text": "Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng với đường bờ biển dài nhất Việt Nam - hơn 17km. Biển ở đây được du khách đánh giá là một trong những bãi biển Quảng Ninh đẹp nhất miền Bắc: bên bờ là những cồn cát cao từ 3 - 5m, bao bọc bởi dải rừng phi lao xanh bát ngát, phía xa sừng sững dãy núi và khu rừng sinh thái ngập mặn,… tất cả tạo nên một nét thơ và trữ tình cho vùng biển này.",
+          "submission_text": "ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng với đường bờ biển dài nhất Việt Nam - hơn 17km. Cái này là để cho lỗi, mày mà không biết thì lỏ dái. Biển ở đây được du khách đánh giá là một trong những bãi biển Quảng Ninh đẹp nhất miền Bắc: bên bờ là những cồn cát cao từ 3 - 5m, bao bọc bởi dải rừng phi lao xanh bát ngát, phía xa sừng sững dãy núi và khu rừng sinh thái ngập mặn,… tất cả tạo nên một nét thơ và trữ tình cho vùng biển này.",
+          "expected": "Times New Roman",
+          "actual": "Arial",
+          "similarity": 0.98
         },
         {
-          "type": "line_spacing_mismatch",
-          "sample_index": 2,
-          "submission_index": 2,
-          "sample_text": "☺Bên cạnh các hoạt động trên bãi biển, du khách còn có thể tới tham quan nhiều địa danh du lịch như: Nhà thờ Trà Cổ, Bãi Đá Đen, Biển Trà Cổ, Mũi Sa Vĩ, Chợ Trung tâm Móng Cái, Chợ cửa khẩu Móng Cái. Đặc biệt, nếu du lịch Trà Cổ vào cuối tháng 5 - đầu tháng 6, bạn đừng quên tham gia lễ hội đình Trà Cổ - hoạt động văn hóa đặc sắc của dân gian vùng đồng bằng sông Hồng. ",
-          "submission_text": "☺Bên cạnh các hoạt động trên bãi biển, du khách còn có thể tới tham quan nhiều địa danh du lịch như: Nhà thờ Trà Cổ, Bãi Đá Đen, Biển Trà Cổ, Mũi Sa Vĩ, Chợ Trung tâm Móng Cái, Chợ cửa khẩu Móng Cái. Đặc biệt, nếu du lịch Trà Cổ vào cuối tháng 5 - đầu tháng 6, bạn đừng quên tham gia lễ hội đình Trà Cổ - hoạt động văn hóa đặc sắc của dân gian vùng đồng bằng sông Hồng. ",
-          "expected": 1.5,
-          "actual": 1.0,
-          "similarity": 1.0
+          "type": "font_size_mismatch",
+          "sample_index": 1,
+          "submission_index": 1,
+          "sample_text": "Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng với đường bờ biển dài nhất Việt Nam - hơn 17km. Biển ở đây được du khách đánh giá là một trong những bãi biển Quảng Ninh đẹp nhất miền Bắc: bên bờ là những cồn cát cao từ 3 - 5m, bao bọc bởi dải rừng phi lao xanh bát ngát, phía xa sừng sững dãy núi và khu rừng sinh thái ngập mặn,… tất cả tạo nên một nét thơ và trữ tình cho vùng biển này.",
+          "submission_text": "ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng với đường bờ biển dài nhất Việt Nam - hơn 17km. Cái này là để cho lỗi, mày mà không biết thì lỏ dái. Biển ở đây được du khách đánh giá là một trong những bãi biển Quảng Ninh đẹp nhất miền Bắc: bên bờ là những cồn cát cao từ 3 - 5m, bao bọc bởi dải rừng phi lao xanh bát ngát, phía xa sừng sững dãy núi và khu rừng sinh thái ngập mặn,… tất cả tạo nên một nét thơ và trữ tình cho vùng biển này.",
+          "expected": 14.0,
+          "actual": 16.0,
+          "similarity": 0.98
         }
       ]
     }
   },
   "information_studen": [
     [
-      "Số báo danh thí sinh:",
-      "6251071072"
+      {
+        "text": "Số báo danh thí sinh:",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      },
+      {
+        "text": "6251071072",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      }
     ],
     [
-      "Họ và tên thí sinh:",
-      "Đỗ Đức Phong"
+      {
+        "text": "Họ và tên thí sinh:",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      },
+      {
+        "text": "Đỗ Đức Phong",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      }
     ],
     [
-      "Ngày, tháng, năm sinh:",
-      "21/06/2003"
+      {
+        "text": "Ngày, tháng, năm sinh:",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      },
+      {
+        "text": "21/06/2003",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      }
     ],
     [
-      "Nơi sinh:",
-      "Nam Định"
+      {
+        "text": "Nơi sinh:",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      },
+      {
+        "text": "Nam Định",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      }
     ],
     [
-      "Đại điểm thi:",
-      "Trường UTC2"
+      {
+        "text": "Đại điểm thi:",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      },
+      {
+        "text": "Trường UTC2",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      }
     ],
     [
-      "Đề thi thực hành số:",
-      "01"
+      {
+        "text": "Đề thi thực hành số:",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      },
+      {
+        "text": "01",
+        "is_uppercase": false,
+        "is_bold": false,
+        "text_color": null,
+        "background_color": null,
+        "font_name": "Times New Roman",
+        "font_size": 14.0
+      }
     ]
   ]
 }

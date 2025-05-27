@@ -21,21 +21,59 @@ Margins: MATCH
 
 Columns: MATCH
 
-Wordart: MATCH
+Wordart: MISMATCH
+  - Wordart 1 Segment 1 Glow:
+      expected: {'type': 'none'}
+      actual: {'radius': '63500', 'color_type': 'scheme', 'color': 'accent3', 'saturation': '175000', 'alpha': '60000'}
+  - Wordart 1 Shape Info Effects:
+      expected: {'transform': {'type': 'none'}}
+      actual: {'transform': {'type': 'textWave1'}}
 
 Drop Caps: MATCH
 
-Symbols: MATCH
+Symbols: MISMATCH
+  - Symbol Count:
+      expected: 2
+      actual: 1
+  - Symbol Details:
+      [{'index': 0, 'differences': {'global_offset': {'expected': 540, 'actual': 962}}}, {'index': 1, 'differences': {'expected': {'type': 'unicode_symbol', 'character': '☺', 'unicode': 'U+263A', 'font_name': 'Times New Roman', 'font_size': 14.0, 'run_index': 0, 'char_offset': 0, 'global_offset': 910}, 'actual': None}}]
+  Similarity Score: 0.35
 
 Images: MATCH
 
 Tables: MISMATCH
-  - Table 1 Row 1 Cell 2 Text:
-      expected: 6251071072
-      actual: 0123456789
-  - Table 1 Row 2 Cell 2 Text:
-      expected: Đỗ Đức Phong
-      actual: Lò Thị Nung
+  - Table 1 Row 1 Cell Count:
+      expected: 3
+      actual: 2
+  - Table 1 Row 1 Cell 1:
+      text_color: {'expected': None, 'actual': 'FFFFFF'}
+      background_color: {'expected': None, 'actual': '5B9BD5'}
+  - Table 1 Row 1 Cell 2:
+      text: {'expected': '6251071072', 'actual': '0123456789'}
+      text_color: {'expected': None, 'actual': 'FFFFFF'}
+      background_color: {'expected': None, 'actual': '5B9BD5'}
+  - Table 1 Row 2 Cell Count:
+      expected: 3
+      actual: 2
+  - Table 1 Row 2 Cell 2:
+      text: {'expected': 'Đỗ Đức Phong', 'actual': 'LÒ THỊ NUNG'}
+      is_uppercase: {'expected': False, 'actual': True}
+  - Table 1 Row 3 Cell Count:
+      expected: 3
+      actual: 2
+  - Table 1 Row 4 Cell Count:
+      expected: 3
+      actual: 2
+  - Table 1 Row 4 Cell 1:
+      is_bold: {'expected': False, 'actual': True}
+  - Table 1 Row 4 Cell 2:
+      is_bold: {'expected': False, 'actual': True}
+  - Table 1 Row 5 Cell Count:
+      expected: 3
+      actual: 2
+  - Table 1 Row 6 Cell Count:
+      expected: 3
+      actual: 2
 
 ------------------------------------------------------------
 CONTENT EVALUATION
@@ -49,16 +87,18 @@ Partially Similar Content (1):
     Submission (2): ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
     Differences: {'common': 'ở nơi cực Đông Bắc Tổ quốc Trà Cổ nổi tiếng với đường bờ biển dài nhất Việt Nam hơn 17km Biển ở đây được du khách đánh giá là một trong những bãi biển Quảng Ninh đẹp nhất miền Bắc bên bờ là những cồn cát cao từ 3 5m bao bọc bởi dải rừng phi lao xanh bát ngát phía xa sừng sững dãy núi và khu rừng sinh thái ngập mặn tất cả tạo nên một nét thơ và trữ tình cho vùng biển này', 'removed': 'Ằm', 'added': 'ằm Cái này là để cho lỗi mày mà không biết thì lỏ dái'}
 
-Font Size Mismatch (1):
-  - Paragraph with similarity 1.00:
-    Sample: ☺Bên cạnh các hoạt động trên bãi biển, du khách cò...
-    Expected size: 14.0
-    Actual size: 15.0
+Font Name Mismatch (1):
+  - Paragraph with similarity 0.98:
+    Sample: Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    submission: ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    Expected name: Times New Roman
+    Actual name: Arial
 
-Line Spacing Mismatch (1):
-  - Paragraph with similarity 1.00:
-    Sample: ☺Bên cạnh các hoạt động trên bãi biển, du khách cò...
-    Expected spacing: 1.5
-    Actual spacing: 1.0
+Font Size Mismatch (1):
+  - Paragraph with similarity 0.98:
+    Sample: Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    submission: ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    Expected size: 14.0
+    Actual size: 16.0
 
 ============================================================

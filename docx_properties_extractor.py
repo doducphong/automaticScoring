@@ -4,6 +4,27 @@ import zipfile
 import os
 from lxml import etree
 import docx
+from io import BytesIO
+from PIL import Image
+from PIL import Image, UnidentifiedImageError
+import unicodedata
+
+# Define XML namespaces used in .docx files
+namespaces = {
+    'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
+    'a': 'http://schemas.openxmlformats.org/drawingml/2006/main',
+    'pic': 'http://schemas.openxmlformats.org/drawingml/2006/picture',
+    'r': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships',
+    'wp': 'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing',
+    'mc': 'http://schemas.openxmlformats.org/markup-compatibility/2006',
+    'wps': 'http://schemas.microsoft.com/office/word/2010/wordprocessingShape',
+    'wpg': 'http://schemas.microsoft.com/office/word/2010/wordprocessingGroup',
+    'w14': 'http://schemas.microsoft.com/office/word/2010/wordml',
+    'w15': 'http://schemas.microsoft.com/office/word/2012/wordml',
+    'o': 'urn:schemas-microsoft-com:office:office',
+    'v': 'urn:schemas-microsoft-com:vml',
+    'm': 'http://schemas.openxmlformats.org/officeDocument/2006/math',
+}
 
 # Helper function to get font information from text runs
 def get_font_info(run):
@@ -47,22 +68,273 @@ def get_font_info(run):
     
     return font_info
 
-# Define XML namespaces used in .docx files
-namespaces = {
-    'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
-    'a': 'http://schemas.openxmlformats.org/drawingml/2006/main',
-    'pic': 'http://schemas.openxmlformats.org/drawingml/2006/picture',
-    'r': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships',
-    'wp': 'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing',
-    'mc': 'http://schemas.openxmlformats.org/markup-compatibility/2006',
-    'wps': 'http://schemas.microsoft.com/office/word/2010/wordprocessingShape',
-    'wpg': 'http://schemas.microsoft.com/office/word/2010/wordprocessingGroup',
-    'w14': 'http://schemas.microsoft.com/office/word/2010/wordml',
-    'w15': 'http://schemas.microsoft.com/office/word/2012/wordml',
-    'o': 'urn:schemas-microsoft-com:office:office',
-    'v': 'urn:schemas-microsoft-com:vml',
-    'm': 'http://schemas.openxmlformats.org/officeDocument/2006/math',
-}
+def extract_text_styles(run):
+    """
+    Extract text style information from a text run including color and formatting.
+    
+    Args:
+        run: A w:r element from the document XML
+        
+    Returns:
+        Dictionary with text style information
+    """
+    styles = {}
+    
+    try:
+        rpr = run.xpath('./w:rPr', namespaces=namespaces)
+        if rpr:
+            # Bold
+            bold = rpr[0].xpath('./w:b', namespaces=namespaces)
+            styles['bold'] = bool(bold)
+            
+            # Italic
+            italic = rpr[0].xpath('./w:i', namespaces=namespaces)
+            styles['italic'] = bool(italic)
+            
+            # Underline
+            underline = rpr[0].xpath('./w:u', namespaces=namespaces)
+            if underline:
+                val = underline[0].get('{%s}val' % namespaces['w'])
+                styles['underline'] = val if val else "single"
+            
+            # Text color
+            color = rpr[0].xpath('./w:color', namespaces=namespaces)
+            if color:
+                val = color[0].get('{%s}val' % namespaces['w'])
+                styles['color'] = val
+            
+            # Text fill
+            text_fill = rpr[0].xpath('./w14:textFill', namespaces=namespaces)
+            if text_fill:
+                # Check for noFill
+                no_fill = text_fill[0].xpath('./w14:noFill', namespaces=namespaces)
+                if no_fill:
+                    styles['text_fill'] = {'type': 'none'}
+                else:
+                    # Check for solid fill
+                    solid_fill = text_fill[0].xpath('./w14:solidFill', namespaces=namespaces)
+                    if solid_fill:
+                        # Check for scheme color
+                        scheme_clr = solid_fill[0].xpath('./w14:schemeClr', namespaces=namespaces)
+                        if scheme_clr:
+                            val = scheme_clr[0].get('{%s}val' % namespaces['w14'])
+                            styles['text_fill'] = {'type': 'solid', 'color': val, 'color_type': 'scheme'}
+                        else:
+                            # Check for RGB color
+                            srgb_clr = solid_fill[0].xpath('./w14:srgbClr', namespaces=namespaces)
+                            if srgb_clr:
+                                val = srgb_clr[0].get('{%s}val' % namespaces['w14'])
+                                styles['text_fill'] = {'type': 'solid', 'color': val, 'color_type': 'rgb'}
+                    
+                    # Check for gradient fill
+                    grad_fill = text_fill[0].xpath('./w14:gradFill', namespaces=namespaces)
+                    if grad_fill:
+                        styles['text_fill'] = {'type': 'gradient', 'stops': []}
+                        stops = grad_fill[0].xpath('.//w14:gs', namespaces=namespaces)
+                        for stop in stops:
+                            pos = stop.get('pos')
+                            # Check for scheme color
+                            scheme_clr = stop.xpath('./w14:schemeClr', namespaces=namespaces)
+                            if scheme_clr:
+                                val = scheme_clr[0].get('{%s}val' % namespaces['w14'])
+                                styles['text_fill']['stops'].append({
+                                    'position': pos,
+                                    'color': val,
+                                    'color_type': 'scheme'
+                                })
+                            else:
+                                # Check for RGB color
+                                srgb_clr = stop.xpath('./w14:srgbClr', namespaces=namespaces)
+                                if srgb_clr:
+                                    val = srgb_clr[0].get('{%s}val' % namespaces['w14'])
+                                    styles['text_fill']['stops'].append({
+                                        'position': pos,
+                                        'color': val,
+                                        'color_type': 'rgb'
+                                    })
+            else:
+                styles['text_fill'] = {'type': 'none'}
+            
+            
+            # Glow effect
+            glow = rpr[0].xpath('./w14:glow', namespaces=namespaces)
+            if glow:
+                glow_elem = glow[0]
+                glow_info = {
+                    'radius': glow_elem.get('{%s}rad' % namespaces['w14'])
+                }
+                
+                # Check for scheme color
+                scheme_clr = glow_elem.xpath('./w14:schemeClr', namespaces=namespaces)
+                if scheme_clr:
+                    glow_info['color_type'] = 'scheme'
+                    glow_info['color'] = scheme_clr[0].get('{%s}val' % namespaces['w14'])
+                    
+                    # Optional: extract satMod and alpha
+                    sat_mod = scheme_clr[0].xpath('./w14:satMod', namespaces=namespaces)
+                    if sat_mod:
+                        glow_info['saturation'] = sat_mod[0].get('{%s}val' % namespaces['w14'])
+                    
+                    alpha = scheme_clr[0].xpath('./w14:alpha', namespaces=namespaces)
+                    if alpha:
+                        glow_info['alpha'] = alpha[0].get('{%s}val' % namespaces['w14'])
+                
+                # You can add logic for srgbClr here if needed
+
+                styles['glow'] = glow_info
+            else:
+                styles['glow'] = {'type': 'none'}
+
+            # Shadow effect
+            shadow = rpr[0].xpath('./w14:shadow', namespaces=namespaces)
+            if shadow:
+                shadow_elem = shadow[0]
+                shadow_info = {
+                    'blur_radius': shadow_elem.get('{%s}blurRad' % namespaces['w14']),
+                    'distance': shadow_elem.get('{%s}dist' % namespaces['w14']),
+                    'direction': shadow_elem.get('{%s}dir' % namespaces['w14']),
+                    'alignment': shadow_elem.get('{%s}algn' % namespaces['w14']),
+                }
+
+                # Check for scheme color
+                scheme_clr = shadow_elem.xpath('./w14:schemeClr', namespaces=namespaces)
+                if scheme_clr:
+                    shadow_info['color_type'] = 'scheme'
+                    shadow_info['color'] = scheme_clr[0].get('{%s}val' % namespaces['w14'])
+
+                    alpha = scheme_clr[0].xpath('./w14:alpha', namespaces=namespaces)
+                    if alpha:
+                        shadow_info['alpha'] = alpha[0].get('{%s}val' % namespaces['w14'])
+
+                # Check for srgb color
+                srgb_clr = shadow_elem.xpath('./w14:srgbClr', namespaces=namespaces)
+                if srgb_clr:
+                    shadow_info['color_type'] = 'rgb'
+                    shadow_info['color'] = srgb_clr[0].get('{%s}val' % namespaces['w14'])
+
+                    alpha = srgb_clr[0].xpath('./w14:alpha', namespaces=namespaces)
+                    if alpha:
+                        shadow_info['alpha'] = alpha[0].get('{%s}val' % namespaces['w14'])
+
+                styles['shadow'] = shadow_info
+            else:
+                styles['shadow'] = {'type': 'none'}
+
+            # Reflection effect
+            reflection = rpr[0].xpath('./w14:reflection', namespaces=namespaces)
+            if reflection:
+                reflection_elem = reflection[0]
+                reflection_info = {
+                    'blur_radius': reflection_elem.get('{%s}blurRad' % namespaces['w14']),
+                    'start_opacity': reflection_elem.get('{%s}stA' % namespaces['w14']),
+                    'start_position': reflection_elem.get('{%s}stPos' % namespaces['w14']),
+                    'end_position': reflection_elem.get('{%s}endPos' % namespaces['w14']),
+                    'distance': reflection_elem.get('{%s}dist' % namespaces['w14']),
+                    'direction': reflection_elem.get('{%s}dir' % namespaces['w14']),
+                    'fade_direction': reflection_elem.get('{%s}fadeDir' % namespaces['w14']),
+                    'skew_x': reflection_elem.get('{%s}kx' % namespaces['w14']),
+                    'alignment': reflection_elem.get('{%s}algn' % namespaces['w14']),
+                }
+                styles['reflection'] = reflection_info
+            else:
+                styles['reflection'] = {'type': 'none'}
+
+            # Text outline
+            text_outline = rpr[0].xpath('./w14:textOutline', namespaces=namespaces)
+            if text_outline:
+                width = text_outline[0].get('{%s}w' % namespaces['w14'])
+                
+                # Check for no line
+                no_line = text_outline[0].xpath('./w14:noLine', namespaces=namespaces)
+                if no_line:
+                    styles['text_outline'] = {'type': 'none', 'width': 'none'}
+                else:
+                    # Check for solid line
+                    solid_line = text_outline[0].xpath('./w14:solidFill', namespaces=namespaces)
+                    if solid_line:
+                        # Check for scheme color
+                        scheme_clr = solid_line[0].xpath('./w14:schemeClr', namespaces=namespaces)
+                        if scheme_clr:
+                            val = scheme_clr[0].get('{%s}val' % namespaces['w14'])
+                            styles['text_outline'] = {
+                                'type': 'solid',
+                                'width': width,
+                                'color': val,
+                                'color_type': 'scheme'
+                            }
+                        else:
+                            # Check for RGB color
+                            srgb_clr = solid_line[0].xpath('./w14:srgbClr', namespaces=namespaces)
+                            if srgb_clr:
+                                val = srgb_clr[0].get('{%s}val' % namespaces['w14'])
+                                styles['text_outline'] = {
+                                    'type': 'solid',
+                                    'width': width,
+                                    'color': val,
+                                    'color_type': 'rgb'
+                                }
+                    
+                    # Check for gradient line
+                    grad_line = text_outline[0].xpath('./w14:gradLine', namespaces=namespaces)
+                    if grad_line:
+                        styles['text_outline'] = {'type': 'gradient', 'width': width, 'stops': []}
+                        stops = grad_line[0].xpath('.//w14:gs', namespaces=namespaces)
+                        for stop in stops:
+                            pos = stop.get('pos')
+                            # Check for scheme color
+                            scheme_clr = stop.xpath('./w14:schemeClr', namespaces=namespaces)
+                            if scheme_clr:
+                                val = scheme_clr[0].get('{%s}val' % namespaces['w14'])
+                                styles['text_outline']['stops'].append({
+                                    'position': pos,
+                                    'color': val,
+                                    'color_type': 'scheme'
+                                })
+                            else:
+                                # Check for RGB color
+                                srgb_clr = stop.xpath('./w14:srgbClr', namespaces=namespaces)
+                                if srgb_clr:
+                                    val = srgb_clr[0].get('{%s}val' % namespaces['w14'])
+                                    styles['text_outline']['stops'].append({
+                                        'position': pos,
+                                        'color': val,
+                                        'color_type': 'rgb'
+                                    })
+            else:
+                styles['text_outline'] = {'type': 'none', 'width': 'none'}
+
+    except Exception as e:
+        print(f"Error extracting text styles: {e}")
+    
+    return styles
+
+def extract_effects_from_shape(shape):
+    """
+    Extract effect information from a shape element.
+    
+    Args:
+        shape: A shape element from the document XML (should be wps:wsp)
+        
+    Returns:
+        Dictionary with effect information
+    """
+    effects = {}
+    
+    try:
+        # Extract text transform (warp) from the correct location
+        # Look for prstTxWarp in a:bodyPr under wps:wsp
+        text_warp = shape.xpath('.//wps:bodyPr/a:prstTxWarp', namespaces=namespaces)
+        if text_warp:
+            effects['transform'] = {
+                'type': text_warp[0].get('prst', 'textNoShape')
+            }
+        else:
+            effects['transform'] = {'type': 'none'}
+    
+    except Exception as e:
+        print(f"Error extracting shape effects: {e}")
+    
+    return effects
 
 def extract_wordart(root):
     """Extract WordArt elements from the document."""
@@ -83,30 +355,40 @@ def extract_wordart(root):
             if text_content:
                 # Get font information
                 font_info = get_font_info(run)
+                # Get text styles including fill and outline
+                text_styles = extract_text_styles(run)
                 
-                text_segments.append({
+                segment = {
                     'text': text_content,
                     'font_name': font_info['font_name'],
                     'font_size': font_info['font_size']
-                })
+                }
+                
+                # Add text styles to segment
+                if text_styles:
+                    for key, value in text_styles.items():
+                        segment[key] = value
+                
+                text_segments.append(segment)
         
-        # Get parent shape info
-        parent_shape = elem.getparent().getparent()  # Often two levels up from txbx
+        # Get the wps:wsp ancestor for shape info
+        wsp_ancestor = elem.xpath('ancestor::wps:wsp', namespaces=namespaces)
         shape_info = {}
         
-        if parent_shape is not None:
+        if wsp_ancestor:
+            wsp = wsp_ancestor[0]
             # Try to get shape ID
-            shape_id = parent_shape.get('{%s}id' % namespaces['w14'], None)
+            shape_id = wsp.get('{%s}id' % namespaces['w14'], None)
             if shape_id:
                 shape_info['id'] = shape_id
             
-            # Check for text effects
-            text_effects = parent_shape.xpath('.//a:effectLst', namespaces=namespaces)
-            if text_effects:
-                shape_info['has_effects'] = True
+            # Extract shape effects from the wsp element
+            shape_effects = extract_effects_from_shape(wsp)
+            if shape_effects:
+                shape_info['effects'] = shape_effects
                 
             # Check for preset geometry (common in WordArt)
-            preset_geom = parent_shape.xpath('.//a:prstGeom', namespaces=namespaces)
+            preset_geom = wsp.xpath('.//a:prstGeom', namespaces=namespaces)
             if preset_geom:
                 geom_type = preset_geom[0].get('prst', 'unknown')
                 shape_info['geometry'] = geom_type
@@ -143,27 +425,49 @@ def extract_wordart(root):
                     text_content = ''.join([t.text for t in text_elements if t.text])
                     
                     if text_content:
+                        print(etree.tostring(run[0], pretty_print=True).decode())
                         # Get font information
                         font_info = get_font_info(run)
+                        # Get text styles including fill and outline
+                        text_styles = extract_text_styles(run)
                         
-                        text_segments.append({
+                        segment = {
                             'text': text_content,
                             'font_name': font_info['font_name'],
                             'font_size': font_info['font_size']
-                        })
+                        }
+                        
+                        # Add text styles to segment
+                        if text_styles:
+                            for key, value in text_styles.items():
+                                segment[key] = value
+                        
+                        text_segments.append(segment)
                 
                 # Combine all text for backward compatibility
                 full_text = ''.join([segment['text'] for segment in text_segments])
                 
-                # Check if this has WordArt characteristics
-                wsp_elements = elem.xpath('ancestor::wps:wsp', namespaces=namespaces)
+                # Get the wps:wsp ancestor for shape info
+                wsp_ancestor = txbx.xpath('ancestor::wps:wsp', namespaces=namespaces)
                 shape_info = {}
                 
-                if wsp_elements:
-                    # Look for text effects
-                    text_effects = wsp_elements[0].xpath('.//a:effectLst', namespaces=namespaces)
-                    if text_effects:
-                        shape_info['has_effects'] = True
+                if wsp_ancestor:
+                    wsp = wsp_ancestor[0]
+                    # Try to get shape ID
+                    shape_id = wsp.get('{%s}id' % namespaces['w14'], None)
+                    if shape_id:
+                        shape_info['id'] = shape_id
+                    
+                    # Extract shape effects from the wsp element
+                    shape_effects = extract_effects_from_shape(wsp)
+                    if shape_effects:
+                        shape_info['effects'] = shape_effects
+                    
+                    # Check for preset geometry (common in WordArt)
+                    preset_geom = wsp.xpath('.//a:prstGeom', namespaces=namespaces)
+                    if preset_geom:
+                        geom_type = preset_geom[0].get('prst', 'unknown')
+                        shape_info['geometry'] = geom_type
                 
                 wordart_elements.append({
                     'type': 'modern_wordart_alternate',
@@ -172,53 +476,81 @@ def extract_wordart(root):
                     'shape_info': shape_info
                 })
     
-    # Approach 3: Look for VML shapes with textboxes (legacy WordArt in older documents)
-    vml_shapes = root.xpath('//v:shape', namespaces=namespaces)
+    # # Approach 3: Look for VML shapes with textboxes (legacy WordArt in older documents)
+    # vml_shapes = root.xpath('//v:shape', namespaces=namespaces)
     
-    for shape in vml_shapes:
-        shape_id = shape.get('id', '')
-        shape_style = shape.get('style', '')
+    # for shape in vml_shapes:
+    #     shape_id = shape.get('id', '')
+    #     shape_style = shape.get('style', '')
         
-        # Check if this looks like WordArt
-        is_wordart = False
-        if 'WordArt' in shape_id or 'WordArt' in shape_style:
-            is_wordart = True
+    #     # Check if this looks like WordArt
+    #     is_wordart = False
+    #     if 'WordArt' in shape_id or 'WordArt' in shape_style:
+    #         is_wordart = True
         
-        # Look for textboxes
-        textboxes = shape.xpath('.//v:textbox', namespaces=namespaces)
+    #     # Look for textboxes
+    #     textboxes = shape.xpath('.//v:textbox', namespaces=namespaces)
         
-        if textboxes:
-            for textbox in textboxes:
-                # Extract text with font information
-                text_segments = []
-                text_runs = textbox.xpath('.//w:r', namespaces=namespaces)
+    #     if textboxes:
+    #         for textbox in textboxes:
+    #             # Extract text with font information
+    #             text_segments = []
+    #             text_runs = textbox.xpath('.//w:r', namespaces=namespaces)
                 
-                for run in text_runs:
-                    text_elements = run.xpath('./w:t', namespaces=namespaces)
-                    text_content = ''.join([t.text for t in text_elements if t.text])
+    #             for run in text_runs:
+    #                 text_elements = run.xpath('./w:t', namespaces=namespaces)
+    #                 text_content = ''.join([t.text for t in text_elements if t.text])
                     
-                    if text_content:
-                        # Get font information
-                        font_info = get_font_info(run)
+    #                 if text_content:
+    #                     # Get font information
+    #                     font_info = get_font_info(run)
+    #                     # Get text styles including fill and outline
+    #                     text_styles = extract_text_styles(run)
                         
-                        text_segments.append({
-                            'text': text_content,
-                            'font_name': font_info['font_name'],
-                            'font_size': font_info['font_size']
-                        })
+    #                     segment = {
+    #                         'text': text_content,
+    #                         'font_name': font_info['font_name'],
+    #                         'font_size': font_info['font_size']
+    #                     }
+                        
+    #                     # Add text styles to segment
+    #                     if text_styles:
+    #                         for key, value in text_styles.items():
+    #                             segment[key] = value
+                        
+    #                     text_segments.append(segment)
                 
-                # Combine all text for backward compatibility
-                full_text = ''.join([segment['text'] for segment in text_segments])
+    #             # Combine all text for backward compatibility
+    #             full_text = ''.join([segment['text'] for segment in text_segments])
                 
-                # If it has text effects or is explicitly WordArt, add it
-                if is_wordart or 'mso-fit-shape-to-text' in textbox.get('style', ''):
-                    wordart_elements.append({
-                        'type': 'legacy_wordart',
-                        'text': full_text,
-                        'text_segments': text_segments,
-                        'id': shape_id,
-                        'style': shape_style
-                    })
+    #             # Extract effects from the VML shape
+    #             shape_info = {}
+                
+    #             # Check for VML shape effects
+    #             shadow = shape.xpath('.//v:shadow', namespaces=namespaces)
+    #             if shadow:
+    #                 if not 'effects' in shape_info:
+    #                     shape_info['effects'] = {}
+    #                 shape_info['effects']['shadow'] = {
+    #                     'on': shadow[0].get('on', 'false'),
+    #                     'color': shadow[0].get('color', '#000000'),
+    #                     'opacity': shadow[0].get('opacity', '1')
+    #                 }
+                
+    #             # If it has text effects or is explicitly WordArt, add it
+    #             if is_wordart or 'mso-fit-shape-to-text' in textbox.get('style', ''):
+    #                 wordart_obj = {
+    #                     'type': 'legacy_wordart',
+    #                     'text': full_text,
+    #                     'text_segments': text_segments,
+    #                     'id': shape_id,
+    #                     'style': shape_style
+    #                 }
+                    
+    #                 if shape_info:
+    #                     wordart_obj['shape_info'] = shape_info
+                        
+    #                 wordart_elements.append(wordart_obj)
     
     return wordart_elements
 
@@ -428,235 +760,366 @@ def extract_tables(root):
             row_data = []
             cells = row.xpath('.//w:tc', namespaces=namespaces)
             for cell in cells:
-                # Lấy tất cả đoạn văn trong cell
-                paragraphs = cell.xpath('.//w:p', namespaces=namespaces)
-                cell_text = ''
-                for para in paragraphs:
-                    texts = para.xpath('.//w:t', namespaces=namespaces)
-                    para_text = ''.join([t.text for t in texts if t.text])
-                    cell_text += para_text + '\n'
-                row_data.append(cell_text.strip())
-            table_data.append(row_data)
-        
-        tables.append(table_data)
-    
+                cell_info = {
+                    "text": "",
+                    "is_uppercase": False,
+                    "is_bold": False,
+                    "text_color": None,
+                    "background_color": None,
+                    "font_name": None,
+                    "font_size": None
+                }
+                 # Lấy màu nền của ô
+                shd = cell.xpath('.//w:tcPr/w:shd', namespaces=namespaces)
+                if shd:
+                    cell_info["background_color"] = shd[0].get(f"{{{namespaces['w']}}}fill")
+
+                    
+                # Extract all runs inside the cell
+                font_name = None
+                font_size = None
+                texts = []
+                bold_found = False
+                color_val = None
+
+                runs = cell.xpath('.//w:r', namespaces=namespaces)
+                for run in runs:
+                    # Text content
+                    ts = run.xpath('./w:t', namespaces=namespaces)
+                    for t in ts:
+                        if t.text:
+                            texts.append(t.text)
+
+                    # Bold detection
+                    b = run.xpath('./w:rPr/w:b', namespaces=namespaces)
+                    if b:
+                        bold_found = True
+
+                    # Text color
+                    color = run.xpath('./w:rPr/w:color', namespaces=namespaces)
+                    if color and color[0].get(f"{{{namespaces['w']}}}val"):
+                        color_val = color[0].get(f"{{{namespaces['w']}}}val")
+                    
+                    # font, font_size
+                    font_info = get_font_info(run)
+                    if font_info['font_name'] and not font_name:
+                        font_name = font_info['font_name']
+                    if font_info['font_size'] and not font_size:
+                        font_size = font_info['font_size']
+
+                # Gán text
+                full_text = ''.join(texts).strip()
+                cell_info["text"] = full_text
+                cell_info["is_bold"] = bold_found
+                cell_info["is_uppercase"] = full_text.isupper() if full_text else False
+                cell_info["text_color"] = color_val
+                cell_info["font_name"] = font_name
+                cell_info["font_size"] = font_size
+
+                row_data.append(cell_info)
+            if row_data:  # tránh thêm dòng trống
+                table_data.append(row_data)
+
+        if table_data:
+            tables.append(table_data)
+
     return tables
 
-def extract_symbols(root):
-    """Extract special characters or symbols from the document."""
-    symbols = []
+# def extract_symbols(root):
+#     """Extract special characters or symbols from the document."""
+#     symbols = []
     
-    # Approach 1: Find explicit symbol elements (w:sym)
-    sym_elements = root.xpath('//w:sym', namespaces=namespaces)
+#     # Approach 1: Find explicit symbol elements (w:sym)
+#     sym_elements = root.xpath('//w:sym', namespaces=namespaces)
     
-    for sym in sym_elements:
-        char = sym.get('{%s}char' % namespaces['w'], '')
-        font = sym.get('{%s}font' % namespaces['w'], 'Default')
+#     for sym in sym_elements:
+#         char = sym.get('{%s}char' % namespaces['w'], '')
+#         font = sym.get('{%s}font' % namespaces['w'], 'Default')
         
-        # Try to convert the character code to actual character
-        try:
-            if char.startswith('F'):  # Often symbols use 'F' prefix in hex
-                char_int = int(char, 16)
-                actual_char = chr(char_int)
-            else:
-                actual_char = char
-        except:
-            actual_char = char
+#         # Try to convert the character code to actual character
+#         try:
+#             if char.startswith('F'):  # Often symbols use 'F' prefix in hex
+#                 char_int = int(char, 16)
+#                 actual_char = chr(char_int)
+#             else:
+#                 actual_char = char
+#         except:
+#             actual_char = char
             
-        # For explicit symbols, get font size from parent run if available
-        font_size = None
-        parent_run = sym.getparent()
-        if parent_run is not None:
-            run_font_info = get_font_info(parent_run)
-            font_size = run_font_info['font_size']
+#         # For explicit symbols, get font size from parent run if available
+#         font_size = None
+#         parent_run = sym.getparent()
+#         if parent_run is not None:
+#             run_font_info = get_font_info(parent_run)
+#             font_size = run_font_info['font_size']
             
-        symbols.append({
-            'type': 'explicit_symbol',
-            'character': actual_char,
-            'char_code': char,
-            'font_name': font,
-            'font_size': font_size
-        })
+#         symbols.append({
+#             'type': 'explicit_symbol',
+#             'character': actual_char,
+#             'char_code': char,
+#             'font_name': font,
+#             'font_size': font_size
+#         })
     
-    # Approach 2: Look for special characters in text runs with specific symbol fonts
-    # Symbol fonts commonly used for special characters
-    symbol_font_list = ['Symbol', 'Wingdings', 'Wingdings 2', 'Wingdings 3', 
-                        'Webdings', 'MT Extra', 'MS UI Gothic',
-                        'Segoe UI Symbol', 'Arial Unicode MS']
+#     # Approach 2: Look for special characters in text runs with specific symbol fonts
+#     # Symbol fonts commonly used for special characters
+#     symbol_font_list = ['Symbol', 'Wingdings', 'Wingdings 2', 'Wingdings 3', 
+#                         'Webdings', 'MT Extra', 'MS UI Gothic',
+#                         'Segoe UI Symbol', 'Arial Unicode MS']
     
-    font_xpath = ' or '.join([f"contains(@w:ascii, '{font}') or contains(@w:hAnsi, '{font}')" 
-                              for font in symbol_font_list])
+#     font_xpath = ' or '.join([f"contains(@w:ascii, '{font}') or contains(@w:hAnsi, '{font}')" 
+#                               for font in symbol_font_list])
     
-    symbol_runs = root.xpath(f"//w:r[.//w:rFonts[{font_xpath}]]", namespaces=namespaces)
+#     symbol_runs = root.xpath(f"//w:r[.//w:rFonts[{font_xpath}]]", namespaces=namespaces)
     
-    for run in symbol_runs:
-        # Get font information
-        font_info = get_font_info(run)
+#     for run in symbol_runs:
+#         # Get font information
+#         font_info = get_font_info(run)
         
-        text_elements = run.xpath('.//w:t', namespaces=namespaces)
-        if text_elements:
-            text_content = ''.join([t.text for t in text_elements if t.text])
-            if text_content:
-                # Get the font information
-                font_elem = run.xpath('.//w:rFonts', namespaces=namespaces)[0]
-                font_ascii = font_elem.get('{%s}ascii' % namespaces['w'], 'Default')
-                font_hansi = font_elem.get('{%s}hAnsi' % namespaces['w'], 'Default')
-                font_name = font_ascii if font_ascii != 'Default' else font_hansi
+#         text_elements = run.xpath('.//w:t', namespaces=namespaces)
+#         if text_elements:
+#             text_content = ''.join([t.text for t in text_elements if t.text])
+#             if text_content:
+#                 # Get the font information
+#                 font_elem = run.xpath('.//w:rFonts', namespaces=namespaces)[0]
+#                 font_ascii = font_elem.get('{%s}ascii' % namespaces['w'], 'Default')
+#                 font_hansi = font_elem.get('{%s}hAnsi' % namespaces['w'], 'Default')
+#                 font_name = font_ascii if font_ascii != 'Default' else font_hansi
                 
-                for char in text_content:
-                    code_point = ord(char)
-                    # Skip alphabetic characters and accented letters
-                    if char.isalpha():
-                        continue
+#                 for char in text_content:
+#                     code_point = ord(char)
+#                     # Skip alphabetic characters and accented letters
+#                     if char.isalpha():
+#                         continue
                         
-                    symbols.append({
-                        'type': 'symbol_font_character',
-                        'character': char,
-                        'unicode': f"U+{code_point:04X}",
-                        'font_name': font_name,
-                        'font_size': font_info['font_size']
-                    })
+#                     symbols.append({
+#                         'type': 'symbol_font_character',
+#                         'character': char,
+#                         'unicode': f"U+{code_point:04X}",
+#                         'font_name': font_name,
+#                         'font_size': font_info['font_size']
+#                     })
     
-    # Approach 3: Look for true symbol characters using more precise Unicode ranges
-    # Refined list of Unicode ranges for only symbols (not letters)
-    symbol_ranges = [
-        (0x00A0, 0x00BF),  # Latin-1 Punctuation and Symbols
-        (0x00D7, 0x00D7),  # Multiplication sign
-        (0x00F7, 0x00F7),  # Division sign
-        (0x2000, 0x206F),  # General Punctuation
-        (0x20A0, 0x20CF),  # Currency Symbols
-        (0x2100, 0x214F),  # Letterlike Symbols (™, ©, ®, etc.)
-        (0x2190, 0x21FF),  # Arrows
-        (0x2200, 0x22FF),  # Mathematical Operators
-        (0x2300, 0x23FF),  # Miscellaneous Technical
-        (0x2460, 0x24FF),  # Enclosed Alphanumerics
-        (0x2500, 0x257F),  # Box Drawing
-        (0x2580, 0x259F),  # Block Elements
-        (0x25A0, 0x25FF),  # Geometric Shapes
-        (0x2600, 0x26FF),  # Miscellaneous Symbols
-        (0x2700, 0x27BF),  # Dingbats
-        (0x27C0, 0x27EF),  # Miscellaneous Mathematical Symbols-A
-        (0x27F0, 0x27FF),  # Supplemental Arrows-A
-        (0x2900, 0x297F),  # Supplemental Arrows-B
-        (0x2980, 0x29FF),  # Miscellaneous Mathematical Symbols-B
-        (0x2A00, 0x2AFF),  # Supplemental Mathematical Operators
-        (0x2B00, 0x2BFF),  # Miscellaneous Symbols and Arrows
-    ]
+#     # Approach 3: Look for true symbol characters using more precise Unicode ranges
+#     # Refined list of Unicode ranges for only symbols (not letters)
+#     symbol_ranges = [
+#         (0x00A0, 0x00BF),  # Latin-1 Punctuation and Symbols
+#         (0x00D7, 0x00D7),  # Multiplication sign
+#         (0x00F7, 0x00F7),  # Division sign
+#         (0x2000, 0x206F),  # General Punctuation
+#         (0x20A0, 0x20CF),  # Currency Symbols
+#         (0x2100, 0x214F),  # Letterlike Symbols (™, ©, ®, etc.)
+#         (0x2190, 0x21FF),  # Arrows
+#         (0x2200, 0x22FF),  # Mathematical Operators
+#         (0x2300, 0x23FF),  # Miscellaneous Technical
+#         (0x2460, 0x24FF),  # Enclosed Alphanumerics
+#         (0x2500, 0x257F),  # Box Drawing
+#         (0x2580, 0x259F),  # Block Elements
+#         (0x25A0, 0x25FF),  # Geometric Shapes
+#         (0x2600, 0x26FF),  # Miscellaneous Symbols
+#         (0x2700, 0x27BF),  # Dingbats
+#         (0x27C0, 0x27EF),  # Miscellaneous Mathematical Symbols-A
+#         (0x27F0, 0x27FF),  # Supplemental Arrows-A
+#         (0x2900, 0x297F),  # Supplemental Arrows-B
+#         (0x2980, 0x29FF),  # Miscellaneous Mathematical Symbols-B
+#         (0x2A00, 0x2AFF),  # Supplemental Mathematical Operators
+#         (0x2B00, 0x2BFF),  # Miscellaneous Symbols and Arrows
+#     ]
     
-    # Unicode General Categories for symbols (not letters)
-    def is_symbol_category(char):
-        import unicodedata
-        # Check general category of character
-        category = unicodedata.category(char)
-        # Only accept true symbols: S* categories, P* (punctuation), and some other specific categories
-        symbol_categories = ['Sm', 'Sc', 'Sk', 'So', 'Po', 'Ps', 'Pe', 'Pi', 'Pf']
-        return category in symbol_categories
+#     # Unicode General Categories for symbols (not letters)
+#     def is_symbol_category(char):
+#         import unicodedata
+#         # Check general category of character
+#         category = unicodedata.category(char)
+#         # Only accept true symbols: S* categories, P* (punctuation), and some other specific categories
+#         symbol_categories = ['Sm', 'Sc', 'Sk', 'So', 'Po', 'Ps', 'Pe', 'Pi', 'Pf']
+#         return category in symbol_categories
     
-    # Find all text runs 
-    all_text_runs = root.xpath('//w:r', namespaces=namespaces)
+#     # Find all text runs 
+#     all_text_runs = root.xpath('//w:r', namespaces=namespaces)
     
-    for run in all_text_runs:
-        # Get font information
-        font_info = get_font_info(run)
+#     for run in all_text_runs:
+#         # Get font information
+#         font_info = get_font_info(run)
         
-        text_elements = run.xpath('.//w:t', namespaces=namespaces)
-        if not text_elements:
-            continue
+#         text_elements = run.xpath('.//w:t', namespaces=namespaces)
+#         if not text_elements:
+#             continue
             
-        # Get run properties and font info
-        run_props = run.xpath('./w:rPr', namespaces=namespaces)
-        font_name = "Default"
-        if run_props:
-            fonts = run_props[0].xpath('./w:rFonts', namespaces=namespaces)
-            if fonts:
-                ascii_font = fonts[0].get('{%s}ascii' % namespaces['w'], 'Default')
-                hansi_font = fonts[0].get('{%s}hAnsi' % namespaces['w'], 'Default')
-                font_name = ascii_font if ascii_font != 'Default' else hansi_font
+#         # Get run properties and font info
+#         run_props = run.xpath('./w:rPr', namespaces=namespaces)
+#         font_name = "Default"
+#         if run_props:
+#             fonts = run_props[0].xpath('./w:rFonts', namespaces=namespaces)
+#             if fonts:
+#                 ascii_font = fonts[0].get('{%s}ascii' % namespaces['w'], 'Default')
+#                 hansi_font = fonts[0].get('{%s}hAnsi' % namespaces['w'], 'Default')
+#                 font_name = ascii_font if ascii_font != 'Default' else hansi_font
         
-        # Check each character in text
-        for text_elem in text_elements:
-            if not text_elem.text:
-                continue
+#         # Check each character in text
+#         for text_elem in text_elements:
+#             if not text_elem.text:
+#                 continue
                 
-            for char in text_elem.text:
-                code_point = ord(char)
+#             for char in text_elem.text:
+#                 code_point = ord(char)
                 
-                # Skip basic ASCII letters and numbers
-                if ord(char) < 127 and (char.isalpha() or char.isdigit() or char.isspace()):
-                    continue
+#                 # Skip basic ASCII letters and numbers
+#                 if ord(char) < 127 and (char.isalpha() or char.isdigit() or char.isspace()):
+#                     continue
                 
-                # Double check if this is a letter from any language - skip if it is
-                if char.isalpha():
-                    continue
+#                 # Double check if this is a letter from any language - skip if it is
+#                 if char.isalpha():
+#                     continue
                     
-                # Check if it's in a symbol range
-                is_in_symbol_range = False
-                for start, end in symbol_ranges:
-                    if start <= code_point <= end:
-                        is_in_symbol_range = True
-                        break
+#                 # Check if it's in a symbol range
+#                 is_in_symbol_range = False
+#                 for start, end in symbol_ranges:
+#                     if start <= code_point <= end:
+#                         is_in_symbol_range = True
+#                         break
                 
-                # Only proceed if in symbol range AND has a symbol category
-                if is_in_symbol_range and is_symbol_category(char):
-                    # Check if we've already recorded this symbol
-                    is_duplicate = False
-                    for sym in symbols:
-                        if (sym.get('type') == 'unicode_symbol' and 
-                            sym.get('character') == char and 
-                            sym.get('font_name') == font_name):
-                            is_duplicate = True
-                            break
+#                 # Only proceed if in symbol range AND has a symbol category
+#                 if is_in_symbol_range and is_symbol_category(char):
+#                     # Check if we've already recorded this symbol
+#                     is_duplicate = False
+#                     for sym in symbols:
+#                         if (sym.get('type') == 'unicode_symbol' and 
+#                             sym.get('character') == char and 
+#                             sym.get('font_name') == font_name):
+#                             is_duplicate = True
+#                             break
                     
-                    if not is_duplicate:
+#                     if not is_duplicate:
+#                         symbols.append({
+#                             'type': 'unicode_symbol',
+#                             'character': char,
+#                             'unicode': f"U+{code_point:04X}",
+#                             'font_name': font_name,
+#                             'font_size': font_info['font_size']
+#                         })
+    
+#     # Approach 4: Look for mathematical symbols
+#     math_elements = root.xpath('//m:oMath', namespaces=namespaces)
+    
+#     for math in math_elements:
+#         # Extract text version of the equation
+#         text_runs = math.xpath('.//w:r', namespaces=namespaces)
+#         equation_text = ""
+#         symbol_chars = []
+        
+#         for run in text_runs:
+#             # Get font information
+#             font_info = get_font_info(run)
+            
+#             text_elements = run.xpath('.//w:t', namespaces=namespaces)
+#             run_text = ''.join([t.text for t in text_elements if t.text])
+#             equation_text += run_text
+            
+#             # Look for symbol characters in this run
+#             for char in run_text:
+#                 code_point = ord(char)
+#                 # Skip alphabetic characters
+#                 if char.isalpha():
+#                     continue
+                    
+#                 # Only include math operators and symbols
+#                 if is_symbol_category(char) or (0x2200 <= code_point <= 0x22FF):
+#                     symbol_chars.append({
+#                         'character': char,
+#                         'unicode': f"U+{code_point:04X}",
+#                         'font_name': font_info['font_name'],
+#                         'font_size': font_info['font_size']
+#                     })
+        
+#         if symbol_chars:
+#             symbols.append({
+#                 'type': 'math_symbol',
+#                 'equation': equation_text,
+#                 'symbols_found': symbol_chars
+#             })
+    
+#     return symbols
+
+def extract_symbols(root):
+    """Extract symbols from DOCX document with position info."""
+    symbols = []
+    global_offset = 0  # To keep track of position in the full document
+
+    excluded_chars = {'…', '‘', '“', '’', '”', '?', '(', ')', ';', ':'}
+
+    paragraphs = root.xpath('//w:body/w:p', namespaces=namespaces)
+
+    for paragraph_index, paragraph in enumerate(paragraphs):
+        runs = paragraph.xpath('./w:r', namespaces=namespaces)
+        for run_index, run in enumerate(runs):
+            font_info = get_font_info(run)
+
+            # Check for w:sym
+            sym_elements = run.xpath('.//w:sym', namespaces=namespaces)
+            for sym in sym_elements:
+                char = sym.get('{%s}char' % namespaces['w'], '')
+                font = sym.get('{%s}font' % namespaces['w'], 'Default')
+                try:
+                    actual_char = chr(int(char, 16)) if char else ''
+                except:
+                    actual_char = char
+
+                symbols.append({
+                    'type': 'explicit_symbol',
+                    'character': actual_char,
+                    'char_code': char,
+                    'font_name': font,
+                    'font_size': font_info['font_size'],
+                    'run_index': run_index,
+                    'char_offset': 0,
+                    'global_offset': global_offset
+                })
+                global_offset += 1
+
+            # Get text elements and iterate characters
+            text_elements = run.xpath('.//w:t', namespaces=namespaces)
+            for text_elem in text_elements:
+                if not text_elem.text:
+                    continue
+                for char_offset, char in enumerate(text_elem.text):
+                    code_point = ord(char)
+                    category = unicodedata.category(char)
+
+                    # Skip ASCII alphanumerics
+                    if (ord(char) < 127 and (char.isalpha() or char.isdigit() or char.isspace())):
+                        global_offset += 1
+                        continue
+                    if char.isalpha():
+                        global_offset += 1
+                        continue
+
+                    is_in_range = any(start <= code_point <= end for start, end in [
+                        (0x00A0, 0x00BF), (0x00D7, 0x00D7), (0x00F7, 0x00F7),
+                        (0x2000, 0x206F), (0x20A0, 0x20CF), (0x2100, 0x214F),
+                        (0x2190, 0x21FF), (0x2200, 0x22FF), (0x2300, 0x23FF),
+                        (0x2460, 0x24FF), (0x2500, 0x257F), (0x2580, 0x259F),
+                        (0x25A0, 0x25FF), (0x2600, 0x26FF), (0x2700, 0x27BF),
+                        (0x27C0, 0x27EF), (0x27F0, 0x27FF), (0x2900, 0x297F),
+                        (0x2980, 0x29FF), (0x2A00, 0x2AFF), (0x2B00, 0x2BFF),
+                    ])
+                    is_symbol = category in ['Sm', 'Sc', 'Sk', 'So', 'Po', 'Ps', 'Pe', 'Pi', 'Pf']
+
+                    if is_in_range and is_symbol and char not in excluded_chars:
                         symbols.append({
                             'type': 'unicode_symbol',
                             'character': char,
                             'unicode': f"U+{code_point:04X}",
-                            'font_name': font_name,
-                            'font_size': font_info['font_size']
+                            'font_name': font_info['font_name'],
+                            'font_size': font_info['font_size'],
+                            'run_index': run_index,
+                            'char_offset': char_offset,
+                            'global_offset': global_offset
                         })
-    
-    # Approach 4: Look for mathematical symbols
-    math_elements = root.xpath('//m:oMath', namespaces=namespaces)
-    
-    for math in math_elements:
-        # Extract text version of the equation
-        text_runs = math.xpath('.//w:r', namespaces=namespaces)
-        equation_text = ""
-        symbol_chars = []
-        
-        for run in text_runs:
-            # Get font information
-            font_info = get_font_info(run)
-            
-            text_elements = run.xpath('.//w:t', namespaces=namespaces)
-            run_text = ''.join([t.text for t in text_elements if t.text])
-            equation_text += run_text
-            
-            # Look for symbol characters in this run
-            for char in run_text:
-                code_point = ord(char)
-                # Skip alphabetic characters
-                if char.isalpha():
-                    continue
-                    
-                # Only include math operators and symbols
-                if is_symbol_category(char) or (0x2200 <= code_point <= 0x22FF):
-                    symbol_chars.append({
-                        'character': char,
-                        'unicode': f"U+{code_point:04X}",
-                        'font_name': font_info['font_name'],
-                        'font_size': font_info['font_size']
-                    })
-        
-        if symbol_chars:
-            symbols.append({
-                'type': 'math_symbol',
-                'equation': equation_text,
-                'symbols_found': symbol_chars
-            })
-    
+                    global_offset += 1
+
     return symbols
+
 
 def extract_image_info(root, relationships):
     """Extract image formatting properties from the document."""
@@ -666,6 +1129,14 @@ def extract_image_info(root, relationships):
     drawing_elements = root.xpath('//w:drawing', namespaces=namespaces)
     
     for drawing in drawing_elements:
+        graphic_data = drawing.xpath('.//a:graphicData', namespaces=namespaces)
+        if not graphic_data:
+            continue
+
+        graphic_uri = graphic_data[0].get('uri')
+        if graphic_uri != "http://schemas.openxmlformats.org/drawingml/2006/picture":
+            continue  # Skip non-picture drawings like WordArt
+        
         # Check if it's an inline or anchored image
         inline = drawing.xpath('./wp:inline', namespaces=namespaces)
         anchor = drawing.xpath('./wp:anchor', namespaces=namespaces)
@@ -725,6 +1196,31 @@ def extract_image_info(root, relationships):
             'position_details': position_info if position_type == "anchored" else {}
         })
     
+    return images
+
+def extract_images_as_pil(docx_path):
+    """
+    Trích xuất tất cả hình ảnh hợp lệ từ file .docx và trả về danh sách đối tượng PIL.Image.
+    Bỏ qua ảnh lỗi hoặc không nhận diện được.
+    """
+    images = []
+
+    with zipfile.ZipFile(docx_path, 'r') as docx_zip:
+        image_files = [f for f in docx_zip.namelist() if f.startswith("word/media/")]
+
+        for image_file in image_files:
+            try:
+                image_data = docx_zip.read(image_file)
+                pil_image = Image.open(BytesIO(image_data)).convert("RGB")
+                images.append({
+                    'filename': os.path.basename(image_file),
+                    'image': pil_image
+                })
+            except UnidentifiedImageError:
+                print(f"⚠️ Bỏ qua '{image_file}' vì không phải ảnh hợp lệ.")
+            except Exception as e:
+                print(f"⚠️ Lỗi không xác định với '{image_file}': {e}")
+
     return images
 
 def extract_relationships(docx_file):
@@ -817,22 +1313,127 @@ def display_results(results):
             # Display font information for each text segment
             if 'text_segments' in wa:
                 print(f"  Text segments with font information:")
-                for j, segment in enumerate(wa['text_segments'][:3], 1):  # Show first 3 segments
+                for j, segment in enumerate(wa['text_segments'], 1):
                     print(f"    Segment {j}: '{segment['text'][:20]}{'...' if len(segment['text']) > 20 else ''}'")
                     print(f"      Font: {segment['font_name'] or 'Default'}")
                     print(f"      Size: {segment['font_size'] or 'Default'} pt")
-                
-                if len(wa['text_segments']) > 3:
-                    print(f"    ... and {len(wa['text_segments']) - 3} more segments")
+                    
+                    # Display text fill information if available
+                    if 'text_fill' in segment:
+                        if segment['text_fill'].get('type') == 'solid':
+                            print(f"      Text Fill: {segment['text_fill'].get('color', 'None')}")
+                        elif segment['text_fill'].get('type') == 'gradient':
+                            stops = segment['text_fill'].get('stops', [])
+                            stop_info = ', '.join([f"{stop.get('color')}@{stop.get('position')}" for stop in stops[:2]])
+                            print(f"      Text Fill: Gradient ({stop_info}{'...' if len(stops) > 2 else ''})")
+                        elif segment['text_fill'].get('type') == 'none':
+                            print(f"      Text Fill: None")
+                        else:
+                            print(f"      Text Fill: {segment['text_fill'].get('type', 'Unknown')}")
+                    else:
+                        print(f"      Text Fill: None")
+                    
+                    # Display text outline information if available
+                    if 'text_outline' in segment:
+                        width = segment['text_outline'].get('width', 'unknown')
+                        color = segment['text_outline'].get('color', 'None')
+                        print(f"      Text Outline: Width {width}, Color {color}")
+                    else:
+                        print(f"      Text Outline: None")
+                    
+                    if 'glow' in segment:
+                        radius = segment['glow'].get('radius', 'unknown')
+                        color_type = segment['glow'].get('color_type', 'None')
+                        saturation = segment['glow'].get('saturation', 'unknown')
+                        alpha = segment['glow'].get('alpha', 'unknown')
+                        print(f"      Glow: radius: {radius}, color_type: {color_type}, saturation: {saturation}, alpha: {alpha}")
+                    else:
+                        print(f"      Glow: None")
+
+                    if 'shadow' in segment and segment['shadow'].get('type') != 'none':
+                        blur_radius = segment['shadow'].get('blur_radius', 'unknown')
+                        distance = segment['shadow'].get('distance', 'unknown')
+                        direction = segment['shadow'].get('direction', 'unknown')
+                        alignment = segment['shadow'].get('alignment', 'unknown')
+                        print(f"      shadow_info : blurRadius: {blur_radius}, distance: {distance}, direction: {direction}, alignment: {alignment}")
+                    else:
+                        print(f"      shadow : None")
+
+                    if 'reflection' in segment and segment['reflection'].get('type') != 'none':
+                        start_opacity = segment['reflection'].get('start_opacity', 'unknown')
+                        start_position = segment['reflection'].get('start_position', 'unknown')
+                        end_position = segment['reflection'].get('end_position', 'unknown')
+                        distance = segment['reflection'].get('distance', 'unknown')
+                        direction = segment['reflection'].get('direction', 'unknown')
+                        fade_direction = segment['reflection'].get('fade_direction', 'unknown')
+                        print(f"      reflection : start_opacity: {start_opacity}, start_position: {start_position}, end_position: {end_position}, distance: {distance}, direction: {direction}, fade_direction: {fade_direction}")
+                    else:
+                        print(f"      reflection : None")
+                    
+                    # Display other styling attributes if available
+                    if 'bold' in segment and segment['bold']:
+                        print(f"      Style: Bold")
+                    if 'italic' in segment and segment['italic']:
+                        print(f"      Style: Italic")
+                    if 'underline' in segment:
+                        print(f"      Underline: {segment['underline']}")
+                    if 'color' in segment:
+                        print(f"      Color: {segment['color']}")
+                    
+                    print("")  # Add a blank line between segments
             
             if 'shape_info' in wa and wa['shape_info']:
                 print(f"  Shape info:")
+                
+                # Display geometry if available
+                if 'geometry' in wa['shape_info']:
+                    print(f"    geometry: {wa['shape_info']['geometry']}")
+                
+                # Display shape effects if available
+                if 'effects' in wa['shape_info']:
+                    effects = wa['shape_info']['effects']
+                    print(f"    effects:")
+                    
+                    # Shadow effect
+                    if 'shadow' in effects:
+                        shadow = effects['shadow']
+                        print(f"      shadow: {shadow.get('color', 'unknown')} " + 
+                              f"(blur: {shadow.get('blurRadius', 'unknown')}, " + 
+                              f"distance: {shadow.get('distance', 'unknown')})")
+                    
+                    # Glow effect
+                    if 'glow' in effects:
+                        glow = effects['glow']
+                        print(f"      glow: {glow.get('color', 'unknown')} " + 
+                              f"(radius: {glow.get('radius', 'unknown')})")
+                    
+                    # Reflection effect
+                    if 'reflection' in effects:
+                        reflection = effects['reflection']
+                        print(f"      reflection: start opacity {reflection.get('startOpacity', 'unknown')}, " + 
+                              f"end opacity {reflection.get('endOpacity', 'unknown')}")
+                    
+                    # Soft edge effect
+                    if 'softEdge' in effects:
+                        soft_edge = effects['softEdge']
+                        print(f"      softEdge: radius {soft_edge.get('radius', 'unknown')}")
+                    
+                    # Transform effect (text warp)
+                    if 'transform' in effects:
+                        transform = effects['transform']
+                        print(f"      transform: {transform.get('type', 'unknown')}")
+                
+                # Display other shape info
                 for key, value in wa['shape_info'].items():
-                    print(f"    {key}: {value}")
+                    if key not in ['geometry', 'effects']:
+                        print(f"    {key}: {value}")
+            
             elif 'id' in wa:
                 print(f"  ID: {wa['id']}")
                 if 'style' in wa:
                     print(f"  Style: {wa['style'][:50]}..." if len(wa['style']) > 50 else f"  Style: {wa['style']}")
+            
+            print("")  # Add a blank line between WordArt elements
     else:
         print("No WordArt elements found")
     
@@ -901,16 +1502,16 @@ def display_results(results):
             
             for i, sym in enumerate(symbols_list[:5], 1):  # Show first 5 of each type to avoid clutter
                 if sym_type == 'explicit_symbol':
-                    print(f"    Symbol {i}: Character '{sym['character']}', Font: {sym['font_name']}, Size: {sym['font_size'] or 'Default'} pt")
+                    print(f"    Symbol {i}: Character '{sym['character']}', Font: {sym['font_name']}, run_index: {sym['run_index']}, char_offset: {sym['char_offset']}, Size: {sym['font_size'] or 'Default'} pt")
                 elif sym_type == 'unicode_symbol':
-                    print(f"    Symbol {i}: '{sym['character']}' ({sym['unicode']}), Font: {sym['font_name']}, Size: {sym['font_size'] or 'Default'} pt")
+                    print(f"    Symbol {i}: '{sym['character']}' ({sym['unicode']}), Font: {sym['font_name']}, run_index: {sym['run_index']}, char_offset: {sym['char_offset']}, Size: {sym['font_size'] or 'Default'} pt")
                 elif sym_type == 'symbol_font_character':
-                    print(f"    Symbol {i}: Character '{sym['character']}', Font: {sym['font_name']}, Size: {sym['font_size'] or 'Default'} pt")
+                    print(f"    Symbol {i}: Character '{sym['character']}', Font: {sym['font_name']}, run_index: {sym['run_index']}, char_offset: {sym['char_offset']}, Size: {sym['font_size'] or 'Default'} pt")
                 elif sym_type == 'math_symbol':
                     print(f"    Math expression {i}: {sym['equation'][:30]}..." if len(sym['equation']) > 30 else f"    Math expression {i}: {sym['equation']}")
                     if 'symbols_found' in sym and sym['symbols_found']:
                         for j, math_sym in enumerate(sym['symbols_found'][:3], 1):
-                            print(f"      Symbol {j}: '{math_sym['character']}' ({math_sym['unicode']}), Font: {math_sym['font_name'] or 'Default'}, Size: {math_sym['font_size'] or 'Default'} pt")
+                            print(f"      Symbol {j}: '{math_sym['character']}' ({math_sym['unicode']}), Font: {math_sym['font_name'] or 'Default'}, run_index: {math_sym['run_index']}, char_offset: {math_sym['char_offset']}, Size: {math_sym['font_size'] or 'Default'} pt")
                         if len(sym['symbols_found']) > 3:
                             print(f"      ... and {len(sym['symbols_found']) - 3} more symbols")
             
@@ -948,8 +1549,20 @@ def display_results(results):
         for i, table in enumerate(results['tables'], 1):
             print(f"Table {i}:")
             for row_idx, row in enumerate(table, 1):
-                row_str = " | ".join(cell if cell else "[Empty]" for cell in row)
-                print(f"  Row {row_idx}: {row_str}")
+                row_strs = []
+                for cell in row:
+                    if isinstance(cell, dict):
+                        text = cell.get("text", "[Empty]")
+                        bold = "Bold" if cell.get("is_bold") else "Normal"
+                        upper = "UPPER" if cell.get("is_uppercase") else "Mixed"
+                        color = cell.get("text_color") or "None"
+                        bg = cell.get("background_color") or "None"
+                        cell_str = f"{text} ({bold}, {upper}, Color: {color}, BG: {bg})"
+                    else:
+                        # Fallback if data is in old format
+                        cell_str = cell if cell else "[Empty]"
+                    row_strs.append(cell_str)
+                print(f"  Row {row_idx}: " + " | ".join(row_strs))
     else:
         print("No tables found.")
 
@@ -1038,6 +1651,15 @@ def main():
     print(f"Extracting properties from '{args.file}'...")
     results = extract_properties(args.file)
     display_results(results)
+
+    # images = extract_images_as_pil('D:/doAnTuChamDiemFileWordExcel/dethi1.docx')
+
+    # # Ví dụ: Hiển thị từng ảnh
+    # for img_info in images:
+    #     print("🖼️", img_info["filename"])
+    #     img_info["image"].show()
+
+
 
 if __name__ == "__main__":
     main() 

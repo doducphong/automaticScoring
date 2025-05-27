@@ -358,19 +358,31 @@ def compare_wordart(sample_wordart: List[Dict], submission_wordart: List[Dict]) 
         sample_element = sample_wordart[i]
         submission_element = submission_wordart[i]
         
-        # Compare text content
-        sample_text = sample_element["text"]
-        submission_text = submission_element["text"]
-        similarity = calculate_text_similarity(sample_text, submission_text)
-        
-        if similarity < 0.99:  # 99% similarity threshold
-            result["matches"] = False
-            result["differences"][f"wordart_{i+1}_text"] = {
-                "expected": sample_text,
-                "actual": submission_text,
-                "similarity": round(similarity, 2)
-            }
-        
+        for j in range(len(sample_element["text_segments"])):
+            sample_segments = sample_element["text_segments"][j]
+            submission_segments = submission_element["text_segments"][j]
+            text1 = sample_segments.get("text", "")
+            text2 = submission_segments.get("text", "")
+            similarity = calculate_text_similarity(text1, text2)
+            if similarity < 0.99:  # 99% similarity threshold
+                result["matches"] = False
+                result["differences"][f"wordart_{i+1}_segment_{j+1}_text"] = {
+                    "expected": text1,
+                    "actual": text2,
+                    "similarity": round(similarity, 2)
+                }
+            for key, sample_value in sample_segments.items():
+                if key == "text":
+                    continue  # Bỏ qua so sánh nội dung text, đã xử lý ở similarity phía trên
+
+                submission_value = submission_segments.get(key)
+                if sample_value != submission_value:
+                    result["matches"] = False
+                    result["differences"][f"wordart_{i+1}_segment_{j+1}_{key}"] = {
+                        "expected": sample_value,
+                        "actual": submission_value
+                    }
+            
         # Compare type
         if sample_element["type"] != submission_element["type"]:
             result["matches"] = False
@@ -378,6 +390,21 @@ def compare_wordart(sample_wordart: List[Dict], submission_wordart: List[Dict]) 
                 "expected": sample_element["type"],
                 "actual": submission_element["type"]
             }
+        
+        # So sánh shape_info nếu cả hai đều có
+        sample_shape_info = sample_element.get("shape_info", {})
+        submission_shape_info = submission_element.get("shape_info", {})
+
+        for key in sample_shape_info:
+            sample_value = sample_shape_info.get(key)
+            submission_value = submission_shape_info.get(key)
+            
+            if sample_value != submission_value:
+                result["matches"] = False
+                result["differences"][f"wordart_{i+1}_shape_info_{key}"] = {
+                    "expected": sample_value,
+                    "actual": submission_value
+                }
     
     return result
 
@@ -453,87 +480,105 @@ def compare_drop_caps(sample_caps: List[Dict], submission_caps: List[Dict]) -> D
     
     return result
 
+from typing import List, Dict, Any
+
+from typing import List, Dict, Any
+
 def compare_symbols(sample_symbols: List[Dict], submission_symbols: List[Dict]) -> Dict[str, Any]:
     """
-    Compare symbols between sample and submission.
+    Compare symbols between sample and submission in detail and calculate similarity score.
     
-    Args:
-        sample_symbols: List of symbols from sample
-        submission_symbols: List of symbols from submission
-        
     Returns:
-        Dictionary with comparison results
+        Dictionary with match result, differences, and similarity score (0 to 1)
     """
     result = {
         "matches": True,
-        "differences": {}
+        "differences": {},
+        "similarity_score": 1.0
     }
-    
-    # Check if both have symbols or not
-    sample_has_symbols = len(sample_symbols) > 0
-    submission_has_symbols = len(submission_symbols) > 0
-    
-    if sample_has_symbols != submission_has_symbols:
+
+    # Check presence
+    if bool(sample_symbols) != bool(submission_symbols):
         result["matches"] = False
+        result["similarity_score"] = 0.0
         result["differences"]["has_symbols"] = {
-            "expected": sample_has_symbols,
-            "actual": submission_has_symbols
+            "expected": bool(sample_symbols),
+            "actual": bool(submission_symbols)
         }
         return result
-    
-    # If both don't have symbols, they match
-    if not sample_has_symbols and not submission_has_symbols:
+
+    if not sample_symbols and not submission_symbols:
         return result
-    
-    # Group symbols by type for easier comparison
-    sample_types = {}
-    for sym in sample_symbols:
-        sym_type = sym["type"]
-        if sym_type not in sample_types:
-            sample_types[sym_type] = []
-        sample_types[sym_type].append(sym)
-    
-    submission_types = {}
-    for sym in submission_symbols:
-        sym_type = sym["type"]
-        if sym_type not in submission_types:
-            submission_types[sym_type] = []
-        submission_types[sym_type].append(sym)
-    
-    # Compare symbol types
-    all_types = set(list(sample_types.keys()) + list(submission_types.keys()))
-    for sym_type in all_types:
-        sample_count = len(sample_types.get(sym_type, []))
-        submission_count = len(submission_types.get(sym_type, []))
-        
-        if sample_count != submission_count:
+
+    sample_len = len(sample_symbols)
+    submission_len = len(submission_symbols)
+
+    # Base penalty for different lengths
+    if sample_len != submission_len:
+        result["matches"] = False
+        length_diff_penalty = abs(sample_len - submission_len) / sample_len
+        result["similarity_score"] -= length_diff_penalty
+        result["differences"]["symbol_count"] = {
+            "expected": sample_len,
+            "actual": submission_len
+        }
+
+    # Compare symbols one by one
+    min_len = min(sample_len, submission_len)
+    symbol_differences = []
+    per_field_penalty = 0.15 / min_len if min_len > 0 else 0
+
+    for i in range(min_len):
+        s_sym = sample_symbols[i]
+        sub_sym = submission_symbols[i]
+        differences = {}
+        penalty = 0.0
+
+        # Compare fields (excluding character)
+
+        for field in ["type", "run_index", "char_offset", "global_offset"]:
+            if s_sym.get(field) != sub_sym.get(field):
+                differences[field] = {
+                    "expected": s_sym.get(field),
+                    "actual": sub_sym.get(field)
+                }
+                penalty += per_field_penalty
+
+        if differences:
+            symbol_differences.append({
+                "index": i,
+                "differences": differences
+            })
             result["matches"] = False
-            result["differences"][f"symbol_type_{sym_type}_count"] = {
-                "expected": sample_count,
-                "actual": submission_count
+            result["similarity_score"] -= penalty
+
+    # Extra symbols beyond min_len
+    for i in range(min_len, sample_len):
+        symbol_differences.append({
+            "index": i,
+            "differences": {
+                "expected": sample_symbols[i],
+                "actual": None
             }
-    
-    # For explicit symbols and unicode symbols, check if specific characters are present
-    # For each type in sample_types, check if each character appears in submission
-    for sym_type in ["explicit_symbol", "unicode_symbol", "symbol_font_character"]:
-        if sym_type not in sample_types:
-            continue
-            
-        sample_chars = set()
-        for sym in sample_types[sym_type]:
-            sample_chars.add(sym["character"])
-        
-        submission_chars = set()
-        if sym_type in submission_types:
-            for sym in submission_types[sym_type]:
-                submission_chars.add(sym["character"])
-        
-        missing_chars = sample_chars - submission_chars
-        if missing_chars:
-            result["matches"] = False
-            result["differences"][f"missing_{sym_type}_chars"] = list(missing_chars)
-    
+        })
+    for i in range(min_len, submission_len):
+        symbol_differences.append({
+            "index": i,
+            "differences": {
+                "expected": None,
+                "actual": submission_symbols[i]
+            }
+        })
+
+    if symbol_differences:
+        result["differences"]["symbol_details"] = symbol_differences
+
+    # Ensure score stays in [0, 1]
+    result["similarity_score"] = max(0.0, round(result["similarity_score"], 4))
+
     return result
+
+
 
 def compare_images(sample_images: List[Dict], submission_images: List[Dict], tolerance=0.1) -> Dict[str, Any]:
     """
@@ -634,6 +679,47 @@ def compare_images(sample_images: List[Dict], submission_images: List[Dict], tol
 def clean_token(token):
     return re.sub(r'[^\wÀ-ỹ]', '', token)  # Giữ lại chữ cái tiếng Việt có dấu
 
+def compare_font_properties(result, sample_para, submission_para, i, j, similarity, sample_text, submission_text):
+    if sample_para["font_name"] != submission_para["font_name"]:
+        result["matches"] = False
+        result["differences"]["errors"].append({
+            "type": "font_name_mismatch",
+            "sample_index": i,
+            "submission_index": j,
+            "sample_text": sample_text,
+            "submission_text": submission_text,
+            "expected": sample_para["font_name"],
+            "actual": submission_para["font_name"],
+            "similarity": round(similarity, 2)
+        })
+    
+    if sample_para["font_size"] is not None and submission_para["font_size"] is not None:
+        if abs(sample_para["font_size"] - submission_para["font_size"]) > 0.5:
+            result["matches"] = False
+            result["differences"]["errors"].append({
+                "type": "font_size_mismatch",
+                "sample_index": i,
+                "submission_index": j,
+                "sample_text": sample_text,
+                "submission_text": submission_text,
+                "expected": sample_para["font_size"],
+                "actual": submission_para["font_size"],
+                "similarity": round(similarity, 2)
+            })
+
+    if sample_para["line_spacing"] != submission_para["line_spacing"]:
+        result["matches"] = False
+        result["differences"]["errors"].append({
+            "type": "line_spacing_mismatch",
+            "sample_index": i,
+            "submission_index": j,
+            "sample_text": sample_text,
+            "submission_text": submission_text,
+            "expected": sample_para["line_spacing"],
+            "actual": submission_para["line_spacing"],
+            "similarity": round(similarity, 2)
+        })
+
 def compare_content(sample_paragraphs: List[Dict[str, Any]], submission_paragraphs: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
     Compare text content between sample and submission, including font information.
@@ -710,54 +796,16 @@ def compare_content(sample_paragraphs: List[Dict[str, Any]], submission_paragrap
             sample_para = sample_paragraphs[i]
             submission_para = submission_paragraphs[j]
             
-            # Compare font name
-            if sample_para["font_name"] != submission_para["font_name"]:
-                result["matches"] = False
-                result["differences"]["errors"].append({
-                    "type": "font_name_mismatch",
-                    "sample_index": i,
-                    "submission_index": j,
-                    "sample_text": sample_text,
-                    "submission_text": submission_text,
-                    "expected": sample_para["font_name"],
-                    "actual": submission_para["font_name"],
-                    "similarity": round(similarity, 2)
-                })
-            
-            # Compare font size (with tolerance)
-            if sample_para["font_size"] is not None and submission_para["font_size"] is not None:
-                # Allow for small differences in font size (0.5 pt)
-                if abs(sample_para["font_size"] - submission_para["font_size"]) > 0.5:
-                    result["matches"] = False
-                    result["differences"]["errors"].append({
-                        "type": "font_size_mismatch",
-                        "sample_index": i,
-                        "submission_index": j,
-                        "sample_text": sample_text,
-                        "submission_text": submission_text,
-                        "expected": sample_para["font_size"],
-                        "actual": submission_para["font_size"],
-                        "similarity": round(similarity, 2)
-                    })
-
-            # Compare line_spacing
-            if sample_para["line_spacing"] != submission_para["line_spacing"]:
-                result["matches"] = False
-                result["differences"]["errors"].append({
-                    "type": "line_spacing_mismatch",
-                    "sample_index": i,
-                    "submission_index": j,
-                    "sample_text": sample_text,
-                    "submission_text": submission_text,
-                    "expected": sample_para["line_spacing"],
-                    "actual": submission_para["line_spacing"],
-                    "similarity": round(similarity, 2)
-                })
+            # Compare font properties
+            compare_font_properties(result, sample_para, submission_para, i, j, similarity, sample_text, submission_text)
         
         elif similarity >= 0.6 and similarity <0.98:
             # Partially similar content (0.4 <= similarity <= 0.7)
             result["matches"] = False
             
+            sample_para = sample_paragraphs[i]
+            submission_para = submission_paragraphs[j]
+
             # Use difflib to get differences
             differ = difflib.Differ()
             diff = list(differ.compare(sample_text.split(), submission_text.split()))
@@ -793,49 +841,9 @@ def compare_content(sample_paragraphs: List[Dict[str, Any]], submission_paragrap
                 "similarity": round(similarity, 2),
                 "diff": diff_result
             })
-            # Compare font name
-            if sample_para["font_name"] != submission_para["font_name"]:
-                result["matches"] = False
-                result["differences"]["errors"].append({
-                    "type": "font_name_mismatch",
-                    "sample_index": i,
-                    "submission_index": j,
-                    "sample_text": sample_text,
-                    "submission_text": submission_text,
-                    "expected": sample_para["font_name"],
-                    "actual": submission_para["font_name"],
-                    "similarity": round(similarity, 2)
-                })
             
-            # Compare font size (with tolerance)
-            if sample_para["font_size"] is not None and submission_para["font_size"] is not None:
-                # Allow for small differences in font size (0.5 pt)
-                if abs(sample_para["font_size"] - submission_para["font_size"]) > 0.5:
-                    result["matches"] = False
-                    result["differences"]["errors"].append({
-                        "type": "font_size_mismatch",
-                        "sample_index": i,
-                        "submission_index": j,
-                        "sample_text": sample_text,
-                        "submission_text": submission_text,
-                        "expected": sample_para["font_size"],
-                        "actual": submission_para["font_size"],
-                        "similarity": round(similarity, 2)
-                    })
-
-            # Compare line_spacing
-            if sample_para["line_spacing"] != submission_para["line_spacing"]:
-                result["matches"] = False
-                result["differences"]["errors"].append({
-                    "type": "line_spacing_mismatch",
-                    "sample_index": i,
-                    "submission_index": j,
-                    "sample_text": sample_text,
-                    "submission_text": submission_text,
-                    "expected": sample_para["line_spacing"],
-                    "actual": submission_para["line_spacing"],
-                    "similarity": round(similarity, 2)
-                })
+            # Compare font properties
+            compare_font_properties(result, sample_para, submission_para, i, j, similarity, sample_text, submission_text)
         
         elif similarity <= 0.6:
             # Similarity < 0.6 - consider as different content
@@ -870,7 +878,7 @@ def compare_content(sample_paragraphs: List[Dict[str, Any]], submission_paragrap
     
     return result
 
-def compare_tables(sample_tables: List[List[List[str]]], submission_tables: List[List[List[str]]]) -> Dict[str, Any]:
+def compare_tables(sample_tables: List[List[List[Dict[str, Any]]]], submission_tables: List[List[List[Dict[str, Any]]]]) -> Dict[str, Any]:
     """
     Compare tables between sample and submission.
     
@@ -924,14 +932,29 @@ def compare_tables(sample_tables: List[List[List[str]]], submission_tables: List
             # So sánh nội dung ô
             min_cells = min(len(sample_row), len(submission_row))
             for c in range(min_cells):
-                sample_cell = sample_row[c].strip()
-                submission_cell = submission_row[c].strip()
-                if sample_cell != submission_cell:
-                    result["matches"] = False
-                    result["differences"][f"table_{i+1}_row_{r+1}_cell_{c+1}_text"] = {
-                        "expected": sample_cell,
-                        "actual": submission_cell
+                sample_cell = sample_row[c]
+                submission_cell = submission_row[c]
+
+                diff_key = f"table_{i+1}_row_{r+1}_cell_{c+1}"
+                cell_diffs = {}
+                # So sánh text
+                if sample_cell.get("text", "").strip() != submission_cell.get("text", "").strip():
+                    cell_diffs["text"] = {
+                        "expected": sample_cell.get("text"),
+                        "actual": submission_cell.get("text")
                     }
+
+                # So sánh định dạng
+                for key in ["is_bold", "is_uppercase", "text_color", "background_color", "font_name", "font_size"]:
+                    if sample_cell.get(key) != submission_cell.get(key):
+                        cell_diffs[key] = {
+                            "expected": sample_cell.get(key),
+                            "actual": submission_cell.get(key)
+                        }
+
+                if cell_diffs:
+                    result["matches"] = False
+                    result["differences"][diff_key] = cell_diffs
 
     return result
 
@@ -1061,8 +1084,9 @@ def format_evaluation_report(evaluation: Dict[str, Any]) -> str:
     report.append("STUDEN'S INFORMATION:")
     if evaluation['information_studen']:
         for row_idx, row in enumerate(evaluation['information_studen'], 1):
-            row_str = " ".join(cell if cell else "[Empty]" for cell in row)
-            report.append(f"  {row_str}")
+            row_str = " ".join(cell["text"] for cell in row if isinstance(cell, dict) and cell.get("text"))
+            if row_str.strip():  # Chỉ thêm dòng nếu có nội dung
+                report.append(f"  {row_str}")
     else:
         report.append("No information found.")
     report.append("="*60)
@@ -1088,6 +1112,8 @@ def format_evaluation_report(evaluation: Dict[str, Any]) -> str:
                         report.append(f"      {k}: {v}")
                 else:
                     report.append(f"      {diff_value}")
+            if results.get("similarity_score") is not None:
+                report.append(f"  Similarity Score: {results['similarity_score']}")
     
     # Content section
     report.append("\n" + "-"*60)
