@@ -1,0 +1,8 @@
+{
+  "/register/page": "app/register/page.js",
+  "/dashboard/students/page": "app/dashboard/students/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/dashboard/exams/page": "app/dashboard/exams/page.js",
+  "/dashboard/grading/page": "app/dashboard/grading/page.js"
+}

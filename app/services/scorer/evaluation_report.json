@@ -1,0 +1,89 @@
+{
+  "overall_match": false,
+  "formatting": {
+    "margins": {
+      "matches": true,
+      "differences": {},
+      "similarity_score": 1.0
+    },
+    "columns": {
+      "matches": true,
+      "differences": {},
+      "similarity_score": 1.0
+    },
+    "wordart": {
+      "matches": false,
+      "differences": {
+        "wordart_1_segment_1_text": {
+          "expected": "ĐIỂM CHUẨN TRÚNG TUYỂN TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI PHÂN HIỆU TẠI TP.HCM",
+          "actual": "ĐIỂM CHUẨN TRÚNG TUYỂN TRƯỜNG ĐẠI HỌC TÔN ĐỨC THẮNG",
+          "similarity": 0.88
+        },
+        "wordart_1_segment_1_shadow": {
+          "expected": {
+            "blur_radius": "50800",
+            "distance": "38100",
+            "direction": "8100000",
+            "alignment": "tr",
+            "color_type": "rgb",
+            "color": "000000",
+            "alpha": "60000"
+          },
+          "actual": {
+            "blur_radius": "50800",
+            "distance": "38100",
+            "direction": "5400000",
+            "alignment": "t",
+            "color_type": "rgb",
+            "color": "000000",
+            "alpha": "60000"
+          }
+        }
+      },
+      "similarity_score": 0.9
+    },
+    "drop_caps": {
+      "matches": true,
+      "differences": {},
+      "similarity_score": 1.0
+    },
+    "symbols": {
+      "matches": true,
+      "differences": {},
+      "similarity_score": 1.0
+    },
+    "images": {
+      "matches": true,
+      "differences": {},
+      "similarity_score": 1.0
+    },
+    "tables": {
+      "matches": true,
+      "differences": {},
+      "similarity_score": 1.0
+    }
+  },
+  "content": {
+    "matches": false,
+    "differences": {
+      "completely_different_content": false,
+      "errors": [
+        {
+          "type": "partially_similar_content",
+          "sample_index": 0,
+          "submission_index": 0,
+          "sample_text": "Hội đồng tuyển sinh Trường Đại học Giao Thông Vận Tải phân hiệu tại TP.HCM năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3( thí sinh khu vực 3 không có điểm ưu tiên) đủ điều kiện xét tuyển của Trường như sau:",
+          "submission_text": "Hội đồng tuyển sinh Trường Đại Tôn Đức Thắng năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3( thí sinh khu vực 3 không có điểm ưu tiên) đủ điều kiện xét tuyển của Trường như sau:",
+          "similarity": 0.99,
+          "diff": {
+            "common": "Hội đồng tuyển sinh Trường Đại năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3 thí sinh khu vực 3 không có điểm ưu tiên đủ điều kiện xét tuyển của Trường như sau",
+            "removed": "học Giao Thông Vận Tải phân hiệu tại TPHCM",
+            "added": "Tôn Đức Thắng"
+          }
+        }
+      ]
+    },
+    "similarity_score": 0.5187
+  },
+  "information_studen": null
+}

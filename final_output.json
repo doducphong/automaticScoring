@@ -1,0 +1,1422 @@
+{
+  "Sheet1": {
+    "student_info": {
+      "name": "Đỗ Đức Phong",
+      "student_code": "0123",
+      "exam_code": "01"
+    },
+    "tables": [
+      {
+        "table_id": 1,
+        "sort_analysis": {
+          "A": "none",
+          "B": "ascending",
+          "C": "none",
+          "D": "none",
+          "E": "descending",
+          "F": "descending"
+        },
+        "cells": [
+          {
+            "coordinate": "A3",
+            "value": "BẢNG KÊ HÀNG BÁCH HÓA - SỮA BAD",
+            "formula": null,
+            "background_color": null,
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 0,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 2,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 0,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "B4",
+            "value": "Tên hàng",
+            "formula": null,
+            "background_color": null,
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 3,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 1,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "C5",
+            "value": "12",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 4,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 2,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "D6",
+            "value": "72000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 5,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 3,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "E7",
+            "value": "10400",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 6,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 4,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "F8",
+            "value": "476280",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 7,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 5,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F9",
+            "value": "356400",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 8,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 6,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F10",
+            "value": "320760",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 9,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 7,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F11",
+            "value": "267300",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 10,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 8,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F12",
+            "value": "256000",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 11,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 9,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F13",
+            "value": "126000",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 12,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 10,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F14",
+            "value": "3446820",
+            "formula": "SUM([2,5]:[10,5])",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 13,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 11,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "E14",
+            "value": "71180",
+            "formula": "SUM([2,4]:[10,4])",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 13,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 11,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "D14",
+            "value": null,
+            "formula": null,
+            "background_color": "FFF2F2F2",
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 11,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 13,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 11,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "C14",
+            "value": null,
+            "formula": null,
+            "background_color": "FFF2F2F2",
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 11,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 13,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 11,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "B14",
+            "value": null,
+            "formula": null,
+            "background_color": "FFF2F2F2",
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 11,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 13,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 11,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "A14",
+            "value": "TỔNG CỘNG:",
+            "formula": null,
+            "background_color": "FFF2F2F2",
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 11,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 13,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 11,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "B13",
+            "value": "BAD ga ha ca rot",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 12,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 10,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "C13",
+            "value": "2",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 12,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 10,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "D13",
+            "value": "63000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 12,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 10,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "E13",
+            "value": "0",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 12,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 10,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "E12",
+            "value": "0",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 11,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 9,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "D12",
+            "value": "64000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 11,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 9,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "C12",
+            "value": "4",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 11,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 9,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "B12",
+            "value": "BAD ca va rau xanh",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 11,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 9,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "A13",
+            "value": "9",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 12,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 10,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "A12",
+            "value": "2",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 11,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 9,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "B11",
+            "value": "BAD rau xanh va bi do",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 10,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 8,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "C11",
+            "value": "5",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 10,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 8,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "D11",
+            "value": "54000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 10,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 8,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "E11",
+            "value": "2700",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 10,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 8,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "E10",
+            "value": "3240",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 9,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 7,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "D10",
+            "value": "54000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 9,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 7,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "C10",
+            "value": "6",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 9,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 7,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "B10",
+            "value": "BAD gao luc",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 9,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 7,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "A11",
+            "value": "3",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 10,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 8,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "A10",
+            "value": "7",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 9,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 7,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "B9",
+            "value": "BAD Sữa chua tron tao",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 8,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 6,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "C9",
+            "value": "5",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 8,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 6,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "D9",
+            "value": "72000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 8,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 6,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "E9",
+            "value": "3600",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 8,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 6,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "E8",
+            "value": "9720",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 7,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 5,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "D8",
+            "value": "54000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 7,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 5,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "C8",
+            "value": "9",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 7,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 5,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "B8",
+            "value": "BAD gao Sữa dinh duong",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 7,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 5,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "A9",
+            "value": "6",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 8,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 6,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "A8",
+            "value": "5",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 7,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 5,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "B7",
+            "value": "BAD khoai tay va ca rot",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 6,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 4,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "C7",
+            "value": "8",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 6,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 4,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "D7",
+            "value": "65000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 6,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 4,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "E6",
+            "value": "11520",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 5,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 3,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "F7",
+            "value": "509600",
+            "formula": "",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 6,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 4,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F6",
+            "value": "564480",
+            "formula": "[3,3]*[3,2]-[3,4]",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 5,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 3,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F5",
+            "value": "570000",
+            "formula": "[2,2]*[2,3]-[2,4]",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 4,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 2,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "E5",
+            "value": "30000",
+            "formula": "IF([2,2]>10,[2,3]*[2,2]*5%,IF([2,2]>=8,[2,2]*[2,3]*2%,IF([2,2]>=5,[2,2]*[2,3]*1%,0)))",
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 4,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 2,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "D5",
+            "value": "50000",
+            "formula": null,
+            "background_color": "FFFFCC99",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 4,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 2,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "C6",
+            "value": "8",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 5,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 3,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "B6",
+            "value": "BAD Sữa chua tron cam xoai",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 5,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 3,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "A7",
+            "value": "4",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 6,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 4,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "A6",
+            "value": "8",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 5,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 3,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "B5",
+            "value": "BAD lua mi",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 4,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 2,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "A5",
+            "value": "1",
+            "formula": null,
+            "background_color": "FFFFFFCC",
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": null,
+              "right": null,
+              "top": null,
+              "bottom": "medium"
+            },
+            "row": 4,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 2,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "A4",
+            "value": "STT",
+            "formula": null,
+            "background_color": null,
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 3,
+            "col": 0,
+            "table_id": 1,
+            "relative_row": 1,
+            "relative_col": 0
+          },
+          {
+            "coordinate": "B3",
+            "value": null,
+            "formula": null,
+            "background_color": null,
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 0,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 2,
+            "col": 1,
+            "table_id": 1,
+            "relative_row": 0,
+            "relative_col": 1
+          },
+          {
+            "coordinate": "C4",
+            "value": "Số lượng",
+            "formula": null,
+            "background_color": null,
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 3,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 1,
+            "relative_col": 2
+          },
+          {
+            "coordinate": "D4",
+            "value": "Đơn giá",
+            "formula": null,
+            "background_color": null,
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 3,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 1,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "E4",
+            "value": "Tiền chiết khấu",
+            "formula": null,
+            "background_color": null,
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 3,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 1,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "F4",
+            "value": "Thành tiền",
+            "formula": null,
+            "background_color": null,
+            "is_merged": false,
+            "merged_origin": null,
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 3,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 1,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "F3",
+            "value": null,
+            "formula": null,
+            "background_color": null,
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 0,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 2,
+            "col": 5,
+            "table_id": 1,
+            "relative_row": 0,
+            "relative_col": 5
+          },
+          {
+            "coordinate": "E3",
+            "value": null,
+            "formula": null,
+            "background_color": null,
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 0,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 2,
+            "col": 4,
+            "table_id": 1,
+            "relative_row": 0,
+            "relative_col": 4
+          },
+          {
+            "coordinate": "D3",
+            "value": null,
+            "formula": null,
+            "background_color": null,
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 0,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 2,
+            "col": 3,
+            "table_id": 1,
+            "relative_row": 0,
+            "relative_col": 3
+          },
+          {
+            "coordinate": "C3",
+            "value": null,
+            "formula": null,
+            "background_color": null,
+            "is_merged": true,
+            "merged_origin": {
+              "relative_row": 0,
+              "relative_col": 0
+            },
+            "border": {
+              "left": "thin",
+              "right": "thin",
+              "top": "thin",
+              "bottom": "thin"
+            },
+            "row": 2,
+            "col": 2,
+            "table_id": 1,
+            "relative_row": 0,
+            "relative_col": 2
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+
+============================================================
+DOCX SUBMISSION EVALUATION REPORT
+============================================================
+STUDEN'S INFORMATION:
+No information found.
+============================================================
+
+OVERALL RESULT: FAIL
+
+------------------------------------------------------------
+FORMATTING EVALUATION
+------------------------------------------------------------
+
+Margins: MATCH
+
+Columns: MATCH
+
+Wordart: MISMATCH
+  - Wordart 1 Segment 1 Text:
+      expected: ĐIỂM CHUẨN TRÚNG TUYỂN TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI PHÂN HIỆU TẠI TP.HCM
+      actual: ĐIỂM CHUẨN TRÚNG TUYỂN TRƯỜNG ĐẠI HỌC TÔN ĐỨC THẮNG
+      similarity: 0.88
+  - Wordart 1 Segment 1 Shadow:
+      expected: {'blur_radius': '50800', 'distance': '38100', 'direction': '8100000', 'alignment': 'tr', 'color_type': 'rgb', 'color': '000000', 'alpha': '60000'}
+      actual: {'blur_radius': '50800', 'distance': '38100', 'direction': '5400000', 'alignment': 't', 'color_type': 'rgb', 'color': '000000', 'alpha': '60000'}
+  Similarity Score: 0.9
+
+Drop Caps: MATCH
+
+Symbols: MATCH
+
+Images: MATCH
+
+Tables: MATCH
+
+------------------------------------------------------------
+CONTENT EVALUATION
+------------------------------------------------------------
+
+Content: MISMATCH
+
+Partially Similar Content (1):
+  - Similarity score: 0.99
+    Sample (1): Hội đồng tuyển sinh Trường Đại học Giao Thông Vận ...
+    Submission (1): Hội đồng tuyển sinh Trường Đại Tôn Đức Thắng năm 2...
+    Differences: {'common': 'Hội đồng tuyển sinh Trường Đại năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3 thí sinh khu vực 3 không có điểm ưu tiên đủ điều kiện xét tuyển của Trường như sau', 'removed': 'học Giao Thông Vận Tải phân hiệu tại TPHCM', 'added': 'Tôn Đức Thắng'}
+Similarity Score: 0.5187
+
+============================================================
+ Score: 7.94

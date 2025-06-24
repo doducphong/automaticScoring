@@ -1,6 +1,28 @@
+# Document processing libraries
 python-docx>=0.8.11
 lxml>=4.9.0
 transformers>=4.20.0
 torch>=1.12.0
 scipy>=1.8.0
-numpy>=1.22.0 
+numpy>=1.22.0
+pandas>=1.5.0
+openpyxl>=3.0.10
+
+# FastAPI and web dependencies
+fastapi>=0.95.0
+uvicorn>=0.22.0
+python-multipart>=0.0.6
+pydantic>=1.10.7
+pydantic[email]>=1.10.7
+
+# Database dependencies
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.6
+alembic>=1.10.0
+
+# Authentication and security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# Utilities
+python-dotenv>=1.0.0

@@ -10,11 +10,11 @@ def test_scenario_1():
     print("Scenario 1: Manual calculation with wrong approach")
     
     # Import just what they think they need
-    from evaluate_docx_submission import get_text_embedding
+    from app.services.scorer.evaluate_docx_submission import get_text_embedding
     
     # Define the test texts
-    text1 = "Tôi chưa từng đến Hà Nội."
-    text2 = "Hôm nay là một ngày đẹp trời và tôi đang đi dạo."
+    text1 = "Hội đồng tuyển sinh Trường Đại Tôn Đức Thắng năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3( thí sinh khu vực 3 không có điểm ưu tiên) đủ điều kiện xét tuyển của Trường như sau:"
+    text2 = "Hội đồng tuyển sinh Trường Đại học Giao Thông Vận Tải phân hiệu tại TP.HCM năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3( thí sinh khu vực 3 không có điểm ưu tiên) đủ điều kiện xét tuyển của Trường như sau:"
     
     # They might try to calculate embeddings without initializing the model
     emb1 = get_text_embedding(text1)
@@ -38,8 +38,8 @@ def test_scenario_2():
     print("\nScenario 2: Overriding global variables incorrectly")
     
     # Import the modules but don't initialize
-    import evaluate_docx_submission
-    from evaluate_docx_submission import calculate_text_similarity
+    import app.services.scorer.evaluate_docx_submission
+    from app.services.scorer.evaluate_docx_submission import calculate_text_similarity
     
     # Incorrectly try to set the model (wrong variable names or types)
     # This won't work because they're setting local variables, not module globals
@@ -48,12 +48,12 @@ def test_scenario_2():
     device = None
     
     # Or they might try this, but with wrong variable names
-    evaluate_docx_submission.model = None  # Wrong name, should be phobert_model
-    evaluate_docx_submission.tokenizer = None  # Wrong name
+    app.services.scorer.evaluate_docx_submission.model = None  # Wrong name, should be phobert_model
+    app.services.scorer.evaluate_docx_submission.tokenizer = None  # Wrong name
     
     # Call the function 
-    text1 = "Tôi chưa từng đến Hà Nội."
-    text2 = "Hôm nay là một ngày đẹp trời và tôi đang đi dạo."
+    text1 = "Hội đồng tuyển sinh Trường Đại Tôn Đức Thắng năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3( thí sinh khu vực 3 không có điểm ưu tiên) đủ điều kiện xét tuyển của Trường như sau:"
+    text2 = "Hội đồng tuyển sinh Trường Đại học Giao Thông Vận Tải phân hiệu tại TP.HCM năm 2022 thông báo điểm chuẩn trúng tuyển theo phương thức xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2022 với thí sinh là học sinh trung học phổ thông thuộc khu vực 3( thí sinh khu vực 3 không có điểm ưu tiên) đủ điều kiện xét tuyển của Trường như sau:"
     similarity = calculate_text_similarity(text1, text2)
     
     print(f"  Result: {similarity}")
@@ -77,7 +77,7 @@ def highlight_differences(text1, text2):
 if __name__ == "__main__":
     # Initialize the model correctly for scenario 4 to work
     print("Initializing model first...")
-    from evaluate_docx_submission import init_phobert_model
+    from app.services.scorer.evaluate_docx_submission import init_phobert_model
     init_phobert_model()
     
     # Test all scenarios

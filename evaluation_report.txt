@@ -22,29 +22,35 @@ Margins: MATCH
 Columns: MATCH
 
 Wordart: MISMATCH
-  - Wordart 1 Segment 1 Glow:
+  - Segment Matched Wordart 2 Glow:
       expected: {'type': 'none'}
       actual: {'radius': '63500', 'color_type': 'scheme', 'color': 'accent3', 'saturation': '175000', 'alpha': '60000'}
-  - Wordart 1 Shape Info Effects:
-      expected: {'transform': {'type': 'none'}}
-      actual: {'transform': {'type': 'textWave1'}}
+  - Segment Matched Wordart 1 Transform:
+      expected: {'type': 'none'}
+      actual: {'type': 'textWave1'}
+  Similarity Score: 0.88
 
 Drop Caps: MATCH
 
 Symbols: MISMATCH
-  - Symbol Count:
-      expected: 2
-      actual: 1
   - Symbol Details:
-      [{'index': 0, 'differences': {'global_offset': {'expected': 540, 'actual': 962}}}, {'index': 1, 'differences': {'expected': {'type': 'unicode_symbol', 'character': '☺', 'unicode': 'U+263A', 'font_name': 'Times New Roman', 'font_size': 14.0, 'run_index': 0, 'char_offset': 0, 'global_offset': 910}, 'actual': None}}]
-  Similarity Score: 0.35
+      [{'index': 1, 'differences': {'run_index': {'expected': 0, 'actual': 1}}}]
+  Similarity Score: 0.925
 
-Images: MATCH
+Images: MISMATCH
+  - Image 1 Height:
+      expected: 3107690.0
+      actual: 2212340.0
+      ratio: 0.71
+  - Image 1 Clip Similarity:
+      score: 0.4249
+      note: Ảnh khác nội dung đáng kể
+  Similarity Score: 0.7
 
 Tables: MISMATCH
   - Table 1 Row 1 Cell Count:
-      expected: 3
-      actual: 2
+      expected: 4
+      actual: 3
   - Table 1 Row 1 Cell 1:
       text_color: {'expected': None, 'actual': 'FFFFFF'}
       background_color: {'expected': None, 'actual': '5B9BD5'}
@@ -52,28 +58,38 @@ Tables: MISMATCH
       text: {'expected': '6251071072', 'actual': '0123456789'}
       text_color: {'expected': None, 'actual': 'FFFFFF'}
       background_color: {'expected': None, 'actual': '5B9BD5'}
+  - Table 1 Row 1 Cell 3:
+      text: {'expected': '6251071072', 'actual': '0123456789'}
+      text_color: {'expected': None, 'actual': 'FFFFFF'}
+      background_color: {'expected': None, 'actual': '5B9BD5'}
   - Table 1 Row 2 Cell Count:
-      expected: 3
-      actual: 2
+      expected: 4
+      actual: 3
   - Table 1 Row 2 Cell 2:
       text: {'expected': 'Đỗ Đức Phong', 'actual': 'LÒ THỊ NUNG'}
       is_uppercase: {'expected': False, 'actual': True}
+  - Table 1 Row 2 Cell 3:
+      text: {'expected': 'Đỗ Đức Phong', 'actual': 'LÒ THỊ NUNG'}
+      is_uppercase: {'expected': False, 'actual': True}
   - Table 1 Row 3 Cell Count:
-      expected: 3
-      actual: 2
+      expected: 4
+      actual: 3
   - Table 1 Row 4 Cell Count:
-      expected: 3
-      actual: 2
+      expected: 4
+      actual: 3
   - Table 1 Row 4 Cell 1:
       is_bold: {'expected': False, 'actual': True}
   - Table 1 Row 4 Cell 2:
       is_bold: {'expected': False, 'actual': True}
+  - Table 1 Row 4 Cell 3:
+      is_bold: {'expected': False, 'actual': True}
   - Table 1 Row 5 Cell Count:
-      expected: 3
-      actual: 2
+      expected: 4
+      actual: 3
   - Table 1 Row 6 Cell Count:
-      expected: 3
-      actual: 2
+      expected: 4
+      actual: 3
+  Similarity Score: 0.3958
 
 ------------------------------------------------------------
 CONTENT EVALUATION
@@ -81,24 +97,19 @@ CONTENT EVALUATION
 
 Content: MISMATCH
 
+Font Difference (5):
+  - {'type': 'font_difference', 'property': 'font_name', 'sample_index': 0, 'submission_index': 0, 'expected': 'Times New Roman', 'actual': 'Arial'}
+  - {'type': 'font_difference', 'property': 'font_size', 'sample_index': 0, 'submission_index': 0, 'expected': 14.0, 'actual': 16.0}
+  - {'type': 'font_difference', 'property': 'font_size', 'sample_index': 1, 'submission_index': 1, 'expected': 14.0, 'actual': 15.0}
+  - {'type': 'font_difference', 'property': 'line_spacing', 'sample_index': 1, 'submission_index': 1, 'expected': 1.5, 'actual': 1.0}
+  - {'type': 'font_difference', 'property': 'line_spacing', 'sample_index': 2, 'submission_index': 2, 'expected': 1.5, 'actual': 1.0}
+
 Partially Similar Content (1):
   - Similarity score: 0.98
-    Sample (2): Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
-    Submission (2): ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    Sample (1): Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
+    Submission (1): ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
     Differences: {'common': 'ở nơi cực Đông Bắc Tổ quốc Trà Cổ nổi tiếng với đường bờ biển dài nhất Việt Nam hơn 17km Biển ở đây được du khách đánh giá là một trong những bãi biển Quảng Ninh đẹp nhất miền Bắc bên bờ là những cồn cát cao từ 3 5m bao bọc bởi dải rừng phi lao xanh bát ngát phía xa sừng sững dãy núi và khu rừng sinh thái ngập mặn tất cả tạo nên một nét thơ và trữ tình cho vùng biển này', 'removed': 'Ằm', 'added': 'ằm Cái này là để cho lỗi mày mà không biết thì lỏ dái'}
-
-Font Name Mismatch (1):
-  - Paragraph with similarity 0.98:
-    Sample: Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
-    submission: ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
-    Expected name: Times New Roman
-    Actual name: Arial
-
-Font Size Mismatch (1):
-  - Paragraph with similarity 0.98:
-    Sample: Ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
-    submission: ằm ở nơi cực Đông Bắc Tổ quốc, Trà Cổ nổi tiếng vớ...
-    Expected size: 14.0
-    Actual size: 16.0
+Similarity Score: 0.5727
 
 ============================================================
+ Score: 8.06
