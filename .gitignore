@@ -1,2 +1,4 @@
 app/fine_tuned_phobert/phobert_similarity_model.pth
 app/fine_tuned_phobert/phobert_similarity_model_v2.pth
+.env
+node_modules/
